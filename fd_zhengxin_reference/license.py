@@ -35,15 +35,18 @@ LICENSE_REGISTRY: dict[str, dict] = {
         "evidence": "docs/data-license.md §1（官网 FAQ/数据集页 2026-10-23 核验）",
     },
     "marpor": {
-        "status": "pending",
+        "status": "confirmed",
         "license": "自定义 Terms of Use（强制引用；再分发默认禁止、须书面授权）",
         "commercial_use": None,
         "constraints": [
             "引用 MPDS 推荐格式 + DOI，并向 Manifesto Project 回送发表引用",
-            "未确认三点：主数据集下载是否强制注册；产品语境是否满足 scientific "
-            "research；查询/导出面是否构成 Redistribution（须 WZB 书面确认）",
+            "2026-10-23 产品方裁决先行开门：内部存储与查询展示按非再分发处理，"
+            "正式书面授权（manifesto-communication@wzb.eu）后补档；"
+            "在此之前不开放任何原始数据导出/下载面",
         ],
-        "evidence": "docs/data-license.md §2（Terms of Use 全文抓取，三点未确认）",
+        "evidence": (
+            "docs/data-license.md §2（Terms of Use 全文抓取）+ §2.1 用户开门裁决"
+        ),
     },
     "wikidata": {
         "status": "confirmed",

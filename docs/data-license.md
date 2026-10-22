@@ -102,3 +102,9 @@
 ---
 
 *核验记录备注：v-dem.net 对部分抓取工具返回 403，许可原文改经 webReader 直抓官网 FAQ/数据页（无缓存）获得，两处措辞一致；MARPOR Terms of Use 为全文直抓。本文档为技术核验记录，不构成法律意见。*
+
+## §2.1 开门裁决（2026-10-23，产品方拍板）
+
+- **MARPOR 摄取许可门翻 confirmed**：内部存储与查询展示按「非再分发」处理，先行开门；正式书面授权（manifesto-communication@wzb.eu）后补档。
+- **在拿到书面授权前，不开放任何 MARPOR 原始数据导出/下载面**（导出面构成 Redistribution 的风险由产品方承担并显式控制）。
+- 数据集获取步骤（注册制，人工）：manifesto-project.wzb.eu 注册账号 → Datasets → MPDS2026a 下载 CSV → 放 `data/raw/marpor/` → `ingest_marpor` 落库（摄取器与查询面已就位并有 fixture 测试）。

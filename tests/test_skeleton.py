@@ -113,8 +113,8 @@ async def test_source_status_empty_db(tmp_path, monkeypatch) -> None:
     assert all(r["status"] == "not_ingested" and r["reason"] for r in out["results"])
     by = {r["source"]: r for r in out["results"]}
     # 未过许可门：原因指名许可门（评审中），并带评审待办；不是含糊的"未摄取"
-    assert by["marpor"]["reason"] == "license_unconfirmed"
-    assert by["marpor"]["gate_detail"]
+    assert by["marpor"]["reason"] == "not_ingested"  # 开门后无数据：纯数据口径
+    assert by["marpor"]["expectation"]  # 空结果仍带说明（开门后待数据）
     # 已过许可门但未摄取：原因就是 not_ingested（sep 为 on-demand 缓存层）
     for source in ("v-dem", "wikidata", "sep"):
         assert by[source]["reason"] == "not_ingested"
@@ -132,9 +132,10 @@ def test_license_gate_discipline() -> None:
         require_license,
     )
 
-    assert not license_confirmed("marpor")
+    assert license_confirmed("marpor")  # 2026-10-23 用户裁决开门
+    assert not license_confirmed("china-line")  # 门机制仍在：未定源清单的源拒摄取
     with pytest.raises(LicenseNotConfirmed):
-        require_license("marpor")
+        require_license("china-line")
     # v-dem 许可事实已核验（CC BY-SA 4.0，非传闻中的 CC BY）：过门但未摄取
     assert license_confirmed("v-dem")
     assert require_license("v-dem")["license"] == "CC BY-SA 4.0"

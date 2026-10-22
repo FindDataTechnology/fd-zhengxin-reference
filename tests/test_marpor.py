@@ -1,9 +1,8 @@
-"""MARPOR 许可门测试：关门形态（license_unconfirmed）。
+"""MARPOR 许可门测试：开门形态（2026-10-23 产品方裁决翻 confirmed）。
 
-覆盖：ingest 双拒（不读文件、不写库——喂不存在的路径也只得到门拒绝）、
-query 双口径（reason=not_ingested + gate_status=license_unconfirmed）、
-require_license 抛错；另证被封住的真摄取骨架是真实逻辑（纯函数单测），
-而非空壳——门开即可用，但门在 registry 翻转前恒关。
+覆盖：门开 → fixture MPDS 真摄取成功（快照版本化+国家-年 rile 均值入库）+ 幂等；
+查询带数据返回行与数据集版本标注；无数据时空结果 not_ingested（纯数据口径，
+无 license_unconfirmed）；坏 schema 拒收并写台账；解析骨架纯函数单测保留。
 """
 
 from __future__ import annotations
@@ -16,7 +15,7 @@ import pytest
 from fd_zhengxin_reference import marpor
 from fd_zhengxin_reference.config import Settings
 from fd_zhengxin_reference.errors import NOT_INGESTED
-from fd_zhengxin_reference.license import LicenseNotConfirmed, require_license
+from fd_zhengxin_reference.license import license_confirmed, require_license
 
 MPDS_CSV = """country,countryname,party,partyname,edate,date,rile,version
 USA,United States,62220,Democratic Party,20201103,2020,-10.5,2026a
@@ -51,65 +50,77 @@ def table_count(settings: Settings, table: str) -> int:
         conn.close()
 
 
-def test_gate_closed_ingest_rejects(mpds_csv, env):
-    """ingest 双拒：license_unconfirmed + 三点确认清单 + ingested=False。"""
+def test_gate_open_registry_confirmed():
+    """2026-10-23 用户裁决翻门：registry marpor=confirmed，require_license 放行。"""
+    assert license_confirmed("marpor") is True
+    require_license("marpor")  # 不抛即过
+
+
+def test_ingest_open_success(mpds_csv, env):
+    """门开 → fixture MPDS 真摄取：均值入库 + 快照版本化 + 台账 ok。"""
     settings, _ = env
     out = marpor.ingest_marpor(mpds_csv, settings=settings)
     assert out["source"] == "marpor"
-    assert out["status"] == "not_ingested"
-    assert out["ingested"] is False
-    # 台账口径缺口原因：license_unconfirmed（区别于查询口径，见 errors.py）
-    assert out["reason"] == "license_unconfirmed"
-    assert out["gate_status"] == "pending"
-    assert out["gate_detail"]  # Terms of Use 概要
-    # 三点待人工确认清单随拒绝结果给出（不静默）
-    constraints = " ".join(out["gate_constraints"])
-    assert "scientific" in constraints or "注册" in constraints
-    assert "书面" in constraints or "Redistribution" in constraints
-    assert "docs/data-license.md" in out["evidence"]
+    assert out["status"] == "ok", out
+    assert out["ingested"] is True
+    assert out["party_rows"] == 4
+    assert out["country_year_rows"] == 2  # USA-2020 + DEU-2017 均值
+    assert "2026a" in (out.get("version") or "")
+    assert out.get("snapshot_id")
+    assert table_count(settings, "regime_indicators") > 0
+    assert table_count(settings, "snapshots") == 1
 
 
-def test_gate_before_io_nonexistent_path(env):
-    """门在 IO 之前：不存在的路径也只得到门拒绝（证明门先于文件读取）。"""
+def test_ingest_open_idempotent(mpds_csv, env):
+    """幂等：同内容重复摄取复用快照，行数一致。"""
     settings, _ = env
-    out = marpor.ingest_marpor("/nonexistent/MPDS2026a.csv", settings=settings)
-    assert out["ingested"] is False
-    assert out["reason"] == "license_unconfirmed"
+    first = marpor.ingest_marpor(mpds_csv, settings=settings)
+    second = marpor.ingest_marpor(mpds_csv, settings=settings)
+    assert second["snapshot_id"] == first["snapshot_id"]
+    assert second["party_rows"] == first["party_rows"]
 
 
-def test_gate_closed_ingest_writes_nothing(mpds_csv, env):
-    """零副作用：拒摄取后库与快照根均无 marpor 痕迹。"""
-    settings, tmp_path = env
-    for _ in range(2):  # 多次尝试同样零副作用
-        marpor.ingest_marpor(mpds_csv, settings=settings)
-    assert table_count(settings, "regime_indicators") == 0
-    assert table_count(settings, "ingest_log") == 0
-    assert table_count(settings, "snapshots") == 0
-    assert not (tmp_path / "snapshots" / "marpor").exists()
+def test_query_with_data(mpds_csv, env):
+    """摄取后查询：国家-年均值行 + 数据集版本标注。"""
+    settings, _ = env
+    marpor.ingest_marpor(mpds_csv, settings=settings)
+    out = marpor.query_marpor_timeseries("USA", (2015, 2021), settings=settings)
+    assert out["results"], "USA 2020 应有均值行"
+    row = out["results"][0]
+    assert row["year"] == 2020
+    assert row["value"] == pytest.approx((-10.5 + 20.3) / 2)
+    assert "2026a" in (out.get("dataset_version") or out.get("version") or "")
 
 
-def test_gate_closed_query_rejects(env):
-    """query 双拒：查询口径 not_ingested + 台账口径 gate_status=license_unconfirmed。"""
+def test_query_without_data_is_not_ingested(env):
+    """门开但未摄取：空结果纯数据口径 not_ingested（无 license_unconfirmed 字段）。"""
     settings, _ = env
     out = marpor.query_marpor_timeseries("USA", (2015, 2020), settings=settings)
     assert out["results"] == []
-    assert out["reason"] == NOT_INGESTED  # 查询口径（errors.py taxonomy）
-    assert out["gate_status"] == "license_unconfirmed"  # 台账口径补充字段
-    assert out["gate_detail"]
-    assert out["hint"]  # 空结果必带原因说明
+    assert out["reason"] == NOT_INGESTED
+    assert "gate_status" not in out  # 门已开，不再带台账口径字段
 
 
-def test_require_license_marpor_raises():
-    """许可门本体：marpor 未确认 → require_license 抛 LicenseNotConfirmed。"""
-    with pytest.raises(LicenseNotConfirmed) as excinfo:
-        require_license("marpor")
-    assert "marpor" in str(excinfo.value)
-    assert excinfo.value.reason  # 拒绝原因非空
+def test_ingest_open_missing_path_raises(env):
+    """门开后路径缺失如实抛 FileNotFoundError（不再被门拒绝掩盖）。"""
+    settings, _ = env
+    with pytest.raises(FileNotFoundError):
+        marpor.ingest_marpor("/nonexistent/MPDS2026a.csv", settings=settings)
 
 
-def test_sealed_parse_skeleton_is_real(mpds_csv):
-    """被封住的真摄取骨架是真实逻辑（纯函数直测，不经门也不开门）：
-    party 级行解析 + 国家-年 rile 均值聚合。"""
+def test_ingest_open_bad_schema_logged(tmp_path, env):
+    """坏 schema 拒收：status=failed/reason=upstream 并写台账，不静默。"""
+    settings, _ = env
+    bad = tmp_path / "bad.csv"
+    bad.write_text("a,b\n1,2\n", encoding="utf-8")
+    out = marpor.ingest_marpor(bad, settings=settings)
+    assert out["status"] == "failed"
+    assert out["reason"] == "upstream"
+    assert table_count(settings, "ingest_log") >= 1
+
+
+def test_parse_skeleton_is_real(mpds_csv):
+    """解析骨架纯函数直测：party 级行 + 国家-年 rile 均值聚合。"""
     rows = list(marpor.parse_mpds_rows(mpds_csv.read_bytes()))
     assert len(rows) == 4
     usa = [r for r in rows if r["country"] == "USA"]
@@ -121,8 +132,8 @@ def test_sealed_parse_skeleton_is_real(mpds_csv):
     assert means[("DEU", 2017)] == pytest.approx((-27.0 + 10.0) / 2)
 
 
-def test_sealed_parse_rejects_bad_schema(tmp_path):
-    """骨架解析同样守结构口径：缺 MPDS 必备列即抛错，不静默。"""
+def test_parse_rejects_bad_schema(tmp_path):
+    """解析守结构口径：缺 MPDS 必备列即抛错，不静默。"""
     bad = tmp_path / "bad.csv"
     bad.write_text("a,b\n1,2\n", encoding="utf-8")
     with pytest.raises(marpor.MpdsFormatError):

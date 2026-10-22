@@ -13,30 +13,7 @@
 - 空值/不可解析值跳过并计数（skipped_values），不落 NULL 行、不编造。
 - 数据集版本号优先级：参数 version > CSV version 列 > 文件名（v16 等）> unknown。
 
-真数据获取——人工下载步骤（表单字段清单，2026-10-23 官网实测记录）：
-
-1. 打开 https://www.v-dem.com/data/the-v-dem-dataset ，选变体子页，如
-   Country-Year: V-Dem Core v16（/data/the-v-dem-dataset/country-year-v-dem-core-v16）；
-   历史版本存档见 /data/dataset-archive（快照版本化用）。
-2. 表单字段（官网免账号，子页为表单式下载）：
-   - Email*（必填）
-   - Gender*（必填）
-   - Newsletter 勾选（可选："Add my email to our mailing list…"）
-   - 隐私同意*（必填："I approve the processing of personal data in
-     accordance with the V-Dem privacy policy"）
-   - 格式选择*（必填：STATA / CSV / R / SPSS → 选 CSV）
-3. 提交后 "Your download should start automatically…"；ZIP 内含 Dataset、
-   Codebook、What's New、Cautionary Notes、Suggested Citations——归属文件随
-   快照原样保留（许可约束：署名按官方建议引用格式，含 DOI）。
-4. 解压出的 CSV 放 data/raw/vdem/（不入 git），然后：
-   ingest_vdem("data/raw/vdem/V-Dem-CY-Core-v16.csv")
-
-自动化表单下载实测（2026-10-23，本机出口）：v-dem.net 443 TCP 连接超时
-（DNS 正常解析；同刻 github.com / manifesto-project.wzb.eu 均可达——站点/
-边缘对本出口的封锁，先于表单/CSRF/captcha），自动化不可达，人工下载为准。
-备选通道：官方 R 包 vdeminstitute/vdemdata（GitHub，可达；.rda 需 R 解析，
-接线波次评估）——见 docs/data-license.md §1「获取通道」。
-"""
+真数据获取——下载配方（2026-10-23 实测打通）：裸域 v-dem.net 直连可达（www 子域不通勿用）；GET /data/the-v-dem-dataset/country-year-v-dem-core-v16/ 带 cookie jar 取 CSRF，POST 回同页（注意不是 /register-newsletter/ 表单），字段：email/gender=man/dataset_file=221(CSV)/accept_terms=on；响应页给出媒体链接 www.v-dem.net/media/datasets/V-Dem-CY-Core-v16_csv.zip（16.4MB，v16 实测 4,017,210 行/202 国）。长期定时拉取走爬虫平台 mihomo 代理方案（用户已定）。"""
 
 from __future__ import annotations
 

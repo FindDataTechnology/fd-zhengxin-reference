@@ -307,8 +307,7 @@ async def test_ideology_query_anchor_and_marpor_gate(mcp, env) -> None:
     marpor_leg = out["sources"]["marpor"]
     assert marpor_leg["status"] == "miss"
     assert marpor_leg["reason"] == NOT_INGESTED
-    assert marpor_leg["gate_status"] == "license_unconfirmed"
-    assert marpor_leg["gate_detail"]
+    assert "gate_status" not in marpor_leg  # 2026-10-23 开门裁决：无数据即纯数据口径
 
 
 async def test_ideology_query_qid_direct(mcp, env) -> None:
@@ -325,7 +324,7 @@ async def test_ideology_query_all_sources_empty(mcp) -> None:
     assert out["reason"] == NOT_INGESTED
     assert out["hint"]
     assert out["sources"]["wikidata"]["reason"] == NOT_INGESTED
-    assert out["sources"]["marpor"]["gate_status"] == "license_unconfirmed"
+    assert out["sources"]["marpor"]["reason"] == NOT_INGESTED  # 开门后无数据
 
 
 # ---------------------------------------------------------------- relation_query
@@ -477,10 +476,10 @@ async def test_source_status_six_sources_after_bootstrap_and_ingests(mcp, env, m
     # sep 缓存只数非种子行（concepts 表 50 条种子概念 + 1 条 sep 缓存）
     assert by["sep"]["detail"] == "on-demand 缓存 1 条"
 
-    # marpor：许可门关 → not_ingested + license_unconfirmed + 评审待办
+    # marpor：开门后未摄取 → not_ingested（纯数据口径，仍带 expectation 说明）
     assert by["marpor"]["status"] == "not_ingested"
-    assert by["marpor"]["reason"] == "license_unconfirmed"
-    assert by["marpor"]["gate_detail"]
+    assert by["marpor"]["reason"] == "not_ingested"
+    assert by["marpor"]["expectation"]
 
 
 def test_source_status_curated_not_ingested_without_bootstrap(env) -> None:

@@ -28,7 +28,7 @@ ATTRIBUTIONS = {
         "V-Dem Dataset (V-Dem Institute), CC BY-SA 4.0（署名 + ShareAlike）,"
         f" {CITATION_URLS['v-dem']}"
     ),
-    "marpor": f"Manifesto Project (MARPOR, WZB), {CITATION_URLS['marpor']}（Terms of Use，未过许可门不摄取）",
+    "marpor": f"Manifesto Project (MARPOR, WZB), {CITATION_URLS['marpor']}（Terms of Use：强制引用，导出/再分发须书面授权——2026-10-23 产品方开门裁决）",
     "wikidata": f"Wikidata (CC0), {CITATION_URLS['wikidata']}",
     "sep": f"Stanford Encyclopedia of Philosophy, {CITATION_URLS['sep']} (link-only citation)",
     "china-line": "中国线源（清单待定；过许可门前不摄取）",

@@ -246,11 +246,12 @@ def query_marpor_timeseries(
     *,
     settings: Settings | None = None,
 ) -> dict:
-    """MARPOR 政体时序查询——关门形态：恒返回空结果 + 双层口径原因。
+    """MARPOR 思潮坐标查询：国家-年 rile 均值序列。
 
-    查询口径 reason=not_ingested（errors.py taxonomy）；台账口径
-    gate_status=license_unconfirmed（缺口补充字段，两者不混用）。三点人工确认
-    （docs/data-license.md §2 未确认清单）落定前，本查询恒为空、绝不编造。
+    - 门未过：恒空结果 + 双层口径原因（license_unconfirmed，过门前绝不编造）
+    - 门已过未摄取：空结果 not_ingested（纯数据口径）
+    - 已摄取：country 收 code（USA/DEU）或国名（从快照原始 CSV 建 code↔name
+      映射解析），返回 rile 序列 + dataset_version + provenance
     """
     entry = license_entry(SOURCE) or {}
     reason, gate_detail = not_ingested_reason(SOURCE)
@@ -267,9 +268,67 @@ def query_marpor_timeseries(
             gate_constraints=entry.get("constraints", []),
             source=SOURCE,
         )
-    # 防御分支：门已过但摄取未接线（未来 registry 翻转后的过渡态）
-    return empty_result(
-        NOT_INGESTED,
-        hint="MARPOR 许可门已过但摄取尚未接线（本查询不含编造数据）。",
-        source=SOURCE,
-    )
+
+    settings = settings or Settings.from_env()
+    conn = settings.connect()
+    try:
+        schema.init(conn)
+        rows = conn.execute(
+            "SELECT country_code, year, value, snapshot_version"
+            " FROM regime_indicators"
+            " WHERE indicator='rile' AND snapshot_version LIKE 'marpor@%'"
+            " ORDER BY country_code, year"
+        ).fetchall()
+        if not rows:
+            return empty_result(
+                NOT_INGESTED,
+                hint="MARPOR 许可门已过但尚未摄取数据（2026-10-23 开门裁决；"
+                "数据集获取步骤见 docs/data-license.md §2.1）。",
+                source=SOURCE,
+            )
+        # 国名解析：从最近 marpor 快照回读原始 CSV 建 code↔name 映射
+        name_map: dict[str, str] = {}
+        latest = rows[-1]["snapshot_version"]
+        snap = snapshot.get(conn, latest)
+        if snap:
+            try:
+                for rec in parse_mpds_rows(snapshot.read(snap)):
+                    if rec["country"] and rec["countryname"]:
+                        name_map.setdefault(rec["countryname"].casefold(), rec["country"])
+            except (MpdsFormatError, OSError):
+                pass  # 映射是增强，解析失败按 code 直配
+        code = country.strip()
+        if code.casefold() not in {r["country_code"].casefold() for r in rows}:
+            code = name_map.get(country.strip().casefold(), code)
+        matched = [
+            r for r in rows if r["country_code"].casefold() == code.casefold()
+        ]
+        if years is not None:
+            lo, hi = (years if isinstance(years, tuple) else (years, years))
+            matched = [r for r in matched if lo <= r["year"] <= hi]
+        if not matched:
+            known = sorted({r["country_code"] for r in rows})[:12]
+            return empty_result(
+                NOT_INGESTED,
+                hint=f"MARPOR 无 {country!r} 的 rile 行（库内 code 样例：{known}）；"
+                "party 细粒度待 party_indicators 表（后续波次）。",
+                source=SOURCE,
+            )
+        dataset_version = matched[0]["snapshot_version"].split("#", 1)[0].split("@", 1)[-1]
+        return {
+            "source": SOURCE,
+            "country_code": matched[0]["country_code"],
+            "indicator": "rile（party→国家-年均值；左右合成维度，正值偏右）",
+            "dataset_version": dataset_version,
+            "results": [
+                {"year": r["year"], "value": r["value"]} for r in matched
+            ],
+            "provenance": provenance(
+                SOURCE,
+                matched[0]["snapshot_version"],
+                DATA_PAGE,
+                _attribution(dataset_version),
+            ),
+        }
+    finally:
+        conn.close()

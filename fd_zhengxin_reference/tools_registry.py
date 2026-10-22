@@ -25,12 +25,12 @@ SOURCES = {
     "v-dem": {
         "log_source": "v-dem",
         "dataset": "v-dem",
-        "expectation": "政体指标时序（国家×年，v2x_* 等指数），许可已核验（CC BY-SA 4.0），官方 CSV 人工下载后 ingest_vdem 落库",
+        "expectation": "政体指标时序（国家×年，v2x_* 等指数），许可已核验（CC BY-SA 4.0）；下载配方见 vdem.py docstring（v-dem.net 裸域直下）",
     },
     "marpor": {
         "log_source": "marpor",
         "dataset": "marpor",
-        "expectation": "政党宣言立场编码（rile 等），许可三点未确认（docs/data-license.md §2），确认前不摄取",
+        "expectation": "政党宣言立场编码（rile 等）；2026-10-23 开门裁决（docs/data-license.md §2.1），数据集注册下载后 ingest_marpor 落库",
     },
     "wikidata": {
         "log_source": "wikidata",
