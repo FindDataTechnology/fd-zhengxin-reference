@@ -28,6 +28,7 @@ from datetime import datetime, timedelta, timezone
 from urllib.parse import parse_qs, unquote, urlparse
 
 import httpx
+import os
 
 from .china_lineage import SEED_CONCEPT_MARKER  # concepts 表共享面：种子行不由 SEP 层读写
 from .config import Settings
@@ -36,7 +37,9 @@ from .provenance import provenance
 from . import schema
 
 USER_AGENT = "fd-zhengxin-reference/0.1"  # 照 zhesi 线 <product>/0.1 命名习惯
-DEFAULT_TIMEOUT = 8.0  # 超时 8s → unreachable（spec 失败口径）
+# 超时默认 8s → unreachable（spec 失败口径）。无外网出口的部署（私有化离线形态）
+# 用 FDZX_REF_SEP_TIMEOUT 调短，curated 层照常出数、SEP 腿快速如实失败
+DEFAULT_TIMEOUT = float(os.environ.get("FDZX_REF_SEP_TIMEOUT", "8.0"))
 SEARCH_PATH = "/search/searcher.py"
 DEFAULT_BASE = "https://plato.stanford.edu"
 MIN_REQUEST_INTERVAL_S = 1.5  # docs/sep-coverage.md 实测请求节奏
