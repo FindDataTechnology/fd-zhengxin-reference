@@ -1,0 +1,412 @@
+{
+ "head": {
+  "vars": [
+   "s",
+   "sLabel",
+   "o",
+   "oLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q135219011"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "America Party"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q126112363"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q9630"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "We Deserve Better"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Labour Party"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q139857349"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q10230"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Cockroach Janta Party"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Bharatiya Janata Party"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11410521"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "sLabel": {
+     "type": "literal",
+     "value": "Q11410521"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Chinese Communist Party"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q115468992"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2022 COVID-19 protests in China"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Chinese Communist Party"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q122350043"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Left-wing Youth"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Chinese Communist Party"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q164432"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q451178"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Eighty Years' War"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Antoine Perrenot de Granvelle"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2599284"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q451178"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "League of Greats"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Antoine Perrenot de Granvelle"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3042087"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q483672"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Houthis"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ali Abdullah Saleh"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q63108391"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q500381"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Taxi protest in Berlin 10-04-2019"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Andreas Scheuer"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11442675"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q521070"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Tenmei riots"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Tanuma Okitsugu"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3376100"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q643348"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Perspectives tunisiennes"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Habib Bourguiba"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q12189962"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q643348"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Tunisian worker"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Habib Bourguiba"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q986738"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q691402"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Portuguese Restoration of Independence"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Philip IV of Spain"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q105137806"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q7747"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Pro-Alexei Navalny Rallies in Russia, 23 January 2021"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Vladimir Putin"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q124726840"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q7747"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Noon Against Putin"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Vladimir Putin"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q131844172"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q8409"
+    },
+    "sLabel": {
+     "type": "literal",
+     "value": "Q131844172"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Alexander the Great"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q27627900"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q10707"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Operation Quartz"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Robert Mugabe"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q115468992"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q15031"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2022 COVID-19 protests in China"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Xi Jinping"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q23660653"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q22686"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Never Trump movement"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Donald Trump"
+    }
+   }
+  ]
+ }
+}

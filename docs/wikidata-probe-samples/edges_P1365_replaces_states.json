@@ -1,0 +1,214 @@
+{
+ "head": {
+  "vars": [
+   "s",
+   "sLabel",
+   "o",
+   "oLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q43"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q12560"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ottoman Empire"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q865"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q8733"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Taiwan"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Qing dynasty"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q1166080"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q8965"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Darien scheme"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Viceroyalty of New Granada"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q31"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q15864"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Belgium"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "United Kingdom of the Netherlands"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q37"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q15180"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Lithuania"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Soviet Union"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q159"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q15180"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Russia"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Soviet Union"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q184"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q15180"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Belarus"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Soviet Union"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q191"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q15180"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Estonia"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Soviet Union"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q212"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q15180"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ukraine"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Soviet Union"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q217"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q15180"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Moldova"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Soviet Union"
+    }
+   }
+  ]
+ }
+}

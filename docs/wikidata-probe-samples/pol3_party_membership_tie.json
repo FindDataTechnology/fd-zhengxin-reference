@@ -1,0 +1,414 @@
+{
+ "head": {
+  "vars": [
+   "person",
+   "personLabel",
+   "party",
+   "partyLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q33866"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Theodore Roosevelt"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q34597"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "James A. Garfield"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q34836"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ulysses S. Grant"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q35041"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "William McKinley"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q35236"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Herbert Hoover"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q35286"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Warren G. Harding"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q35498"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Chester A. Arthur"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q35648"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "William Howard Taft"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q35678"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Benjamin Harrison"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q35686"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Rutherford B. Hayes"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q36023"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Calvin Coolidge"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q39311"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Pat McCrory"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q39593"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Butch Otter"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q39609"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Terry Branstad"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q42230"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "John Bonacic"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q43144"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Sarah Palin"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q43203"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Clint Eastwood"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q44354"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Kane"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q44616"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Wyatt Earp"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q44639"
+    },
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29468"
+    },
+    "personLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Sean Parnell"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican Party"
+    }
+   }
+  ]
+ }
+}

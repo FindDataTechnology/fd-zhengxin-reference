@@ -1,0 +1,174 @@
+{
+ "head": {
+  "vars": [
+   "party",
+   "partyLabel",
+   "ideology",
+   "ideologyLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3173"
+    },
+    "ideology": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q121254"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Green Alliance–The People's Party"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "social democracy"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3173"
+    },
+    "ideology": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q1661415"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Green Alliance–The People's Party"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "green politics"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3173"
+    },
+    "ideology": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3778417"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Green Alliance–The People's Party"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "green party"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q4266"
+    },
+    "ideology": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q121254"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Party of Regions"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "social democracy"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q4266"
+    },
+    "ideology": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q223200"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Party of Regions"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "euroscepticism"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q4266"
+    },
+    "ideology": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q700386"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Party of Regions"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Russophilia"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q4266"
+    },
+    "ideology": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q729119"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Party of Regions"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "economic liberalism"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q4266"
+    },
+    "ideology": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q1414298"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Party of Regions"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "social conservatism"
+    }
+   }
+  ]
+ }
+}

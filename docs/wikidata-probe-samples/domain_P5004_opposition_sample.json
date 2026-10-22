@@ -1,0 +1,414 @@
+{
+ "head": {
+  "vars": [
+   "s",
+   "sLabel",
+   "o",
+   "oLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q574827"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q30"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "anti-Americanism"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "United States"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q4937138"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q66"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Boeing machinists strike of 2008"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Boeing"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q130293467"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q66"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2024 Boeing machinists strike"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Boeing"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q24841291"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q148"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "anti–People's Republic of China sentiment"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "People's Republic of China"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q111074973"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q159"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Anti-Putin Coalition"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Russia"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q120964139"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q159"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "anti-Russian propaganda"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Russia"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q130477581"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q159"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ukrainian anti-Russian propaganda"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Russia"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q4411573"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q207"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "protests during the EU summit in Gothenburg 2001"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "George W. Bush"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q131301162"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q212"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Russian anti-Ukrainian propaganda"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ukraine"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q141128557"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q262"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Algerophobia"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Algeria"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2745509"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q291"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "opposition to pornography"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "pornography"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q7551346"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q291"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "social purity movement"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "pornography"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17142118"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q291"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "National Organization for Men Against Sexism"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "pornography"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q18211542"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q291"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Stop Porn Culture"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "pornography"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q104630339"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q291"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "anti-pornography feminism"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "pornography"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q114643080"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q317"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Sitong Bridge protest"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "dictatorship"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2508977"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q336"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "antiscience"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "science"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q7968565"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q432"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "War against Islam"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Islam"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q30325066"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q432"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "alt-lite"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Islam"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q65344895"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q432"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "anti-Islam"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Islam"
+    }
+   }
+  ]
+ }
+}

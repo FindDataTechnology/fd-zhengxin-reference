@@ -1,0 +1,215 @@
+{
+ "head": {
+  "vars": [
+   "event",
+   "eventLabel",
+   "winner",
+   "winnerLabel",
+   "when"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6022948"
+    },
+    "winner": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q1902106"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2010-11-02T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Indiana's 3rd congressional district special election, 2010"
+    },
+    "winnerLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Marlin Stutzman"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6092938"
+    },
+    "winner": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q815348"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1948-04-18T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "1948 Italian Senate election in Lombardy"
+    },
+    "winnerLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Christian Democracy"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6092941"
+    },
+    "winner": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q815348"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1958-05-25T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "1958 Italian Senate election in Lombardy"
+    },
+    "winnerLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Christian Democracy"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6092944"
+    },
+    "winner": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q815348"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1953-06-07T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "1953 Italian Senate election in Lombardy"
+    },
+    "winnerLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Christian Democracy"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6092948"
+    },
+    "winner": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q1134161"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1996-04-21T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "1996 Italian Senate election in Lombardy"
+    },
+    "winnerLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "The Olive Tree"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6092950"
+    },
+    "winner": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q1046657"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2001-05-13T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2001 Italian Senate election in Lombardy"
+    },
+    "winnerLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "House of Freedoms"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6092953"
+    },
+    "winner": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q1046657"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2006-04-09T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2006 Italian Senate election in Lombardy"
+    },
+    "winnerLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "House of Freedoms"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6092956"
+    },
+    "winner": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11860"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2008-04-13T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2008 Italian Senate election in Lombardy"
+    },
+    "winnerLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Silvio Berlusconi"
+    }
+   }
+  ]
+ }
+}

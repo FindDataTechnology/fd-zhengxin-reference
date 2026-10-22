@@ -1,0 +1,333 @@
+{
+ "head": {
+  "vars": [
+   "s",
+   "sLabel",
+   "classLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6550"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Donald Duck"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "comics character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6550"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Donald Duck"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "video game character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6550"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Donald Duck"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "animated character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6550"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Donald Duck"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "television character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6550"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Donald Duck"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "film character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6550"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Donald Duck"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "anthropomorphic duck"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6550"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Donald Duck"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Disney core universe character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11934"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mickey Mouse"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "mascot character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11934"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mickey Mouse"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "comics character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11934"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mickey Mouse"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "video game character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11934"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mickey Mouse"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "animated character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11934"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mickey Mouse"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "television character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11934"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mickey Mouse"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "film character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11934"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mickey Mouse"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Disney core universe character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11934"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mickey Mouse"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "anthropomorphic mouse"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11936"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Minnie Mouse"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "comics character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11936"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Minnie Mouse"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "video game character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11936"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Minnie Mouse"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "animated character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11936"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Minnie Mouse"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "television character"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11936"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Minnie Mouse"
+    },
+    "classLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "film character"
+    }
+   }
+  ]
+ }
+}

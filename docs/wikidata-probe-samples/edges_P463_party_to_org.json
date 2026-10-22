@@ -1,0 +1,174 @@
+{
+ "head": {
+  "vars": [
+   "party",
+   "partyLabel",
+   "org",
+   "orgLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q161957"
+    },
+    "org": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q639383"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mebyon Kernow"
+    },
+    "orgLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "European Free Alliance"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q163347"
+    },
+    "org": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q128064"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Isamaa"
+    },
+    "orgLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Centrist Democrat International"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q163347"
+    },
+    "org": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q208242"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Isamaa"
+    },
+    "orgLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "European People's Party"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q163347"
+    },
+    "org": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q862603"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Isamaa"
+    },
+    "orgLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "International Democracy Union"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q164878"
+    },
+    "org": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q18759612"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Svobodní"
+    },
+    "orgLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Alliance for Direct Democracy in Europe"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q164878"
+    },
+    "org": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q24686982"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Svobodní"
+    },
+    "orgLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "International Alliance of Libertarian Parties"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q170972"
+    },
+    "org": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q159454"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Socialist Party"
+    },
+    "orgLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Socialist International"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q170972"
+    },
+    "org": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q220945"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Socialist Party"
+    },
+    "orgLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Party of European Socialists"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,413 @@
+{
+ "head": {
+  "vars": [
+   "s",
+   "sLabel",
+   "o",
+   "oLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q47351156"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q352"
+    },
+    "sLabel": {
+     "type": "literal",
+     "value": "Q47351156"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Adolf Hitler"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q110022501"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q352"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Gianni Polli"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Adolf Hitler"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q14644277"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q8409"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Haustan"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Alexander the Great"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51770"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51724"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Palpatine"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Jedi"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51770"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51725"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Palpatine"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mace Windu"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51770"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51730"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Palpatine"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Yoda"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51770"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51746"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Palpatine"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Luke Skywalker"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51770"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51797"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Palpatine"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Princess Leia"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51797"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51770"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Princess Leia"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Palpatine"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51797"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51780"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Princess Leia"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Grand Admiral Thrawn"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q1048"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q125414"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Julius Caesar"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Pompey"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q14630283"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q128574"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Dylan McAvoy"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Joe Clark"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q1048"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q193506"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Julius Caesar"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Cato the Younger"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2206052"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q194705"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Killer Moth"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Barbara Gordon"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3206996"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q194705"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "The Calculator"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Barbara Gordon"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6134747"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q194705"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "James Gordon, Jr."
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Barbara Gordon"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q18151439"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q194705"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Knightfall"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Barbara Gordon"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q353698"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q198211"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Sima Yi"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Zhuge Liang"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51724"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51770"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Jedi"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Palpatine"
+    }
+   },
+   {
+    "s": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51730"
+    },
+    "o": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51770"
+    },
+    "sLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Yoda"
+    },
+    "oLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Palpatine"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,432 @@
+{
+ "head": {
+  "vars": [
+   "event",
+   "eventLabel",
+   "when",
+   "countryLabel",
+   "winnerLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586853"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2010-02-02T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2010 Illinois elections"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "United States"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586938"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1967-07-04T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "1967 Northwest Territories general election"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Canada"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586939"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1999-02-15T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "1999 Nunavut general election"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Canada"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586940"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2008-10-27T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2008 Nunavut general election"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Canada"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586940"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2008-11-03T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2008 Nunavut general election"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Canada"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586940"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2008-11-14T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2008 Nunavut general election"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Canada"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586941"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2004-02-16T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2004 Nunavut general election"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Canada"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586955"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2014-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "type": "literal",
+     "value": "Q3586955"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Senegal"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586961"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2002-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "type": "literal",
+     "value": "Q3586961"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "United States"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586962"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2004-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2004 United States House of Representatives elections in Illinois"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "United States"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586962"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2004-11-02T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2004 United States House of Representatives elections in Illinois"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "United States"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586964"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2006-11-07T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2006 United States House of Representatives elections in Illinois"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "United States"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586966"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2008-11-04T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2008 United States House of Representatives elections in Illinois"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "United States"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3586968"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2012-11-06T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2012 United States House of Representatives elections in Illinois"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "United States"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3587132"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1979-11-14T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "1979 New Hebrides general election"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "New Hebrides"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3587134"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2008-01-17T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2008 Tokelauan general election"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "New Zealand"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3587137"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1937-11-07T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "1937 Siamese general election"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Thailand"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3587138"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1933-11-15T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "1933 Siamese general election"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Thailand"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3587139"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1938-11-12T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "1938 Siamese general election"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Thailand"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3587174"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2005-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "type": "literal",
+     "value": "Q3587174"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ivory Coast"
+    }
+   }
+  ]
+ }
+}

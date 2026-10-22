@@ -1,0 +1,173 @@
+{
+ "head": {
+  "vars": [
+   "m",
+   "mLabel",
+   "parent",
+   "parentLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q106835590"
+    },
+    "parent": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q654863"
+    },
+    "mLabel": {
+     "type": "literal",
+     "value": "Q106835590"
+    },
+    "parentLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Identitarian movement"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q109457718"
+    },
+    "parent": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17182910"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Yellow Power movement"
+    },
+    "parentLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Asian American movement"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q110324724"
+    },
+    "parent": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q4260815"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Yabloko"
+    },
+    "parentLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "liberalism in Russia"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q111747649"
+    },
+    "parent": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q126065"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ayatollah Shariatmadari Movement"
+    },
+    "parentLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Iranian Revolution"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q112206064"
+    },
+    "parent": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q108874648"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Shariatism"
+    },
+    "parentLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Religious-Nationalists"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q115639872"
+    },
+    "parent": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q1618804"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Patriotic Union"
+    },
+    "parentLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Reichsbürger movement"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q116457385"
+    },
+    "parent": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q7252"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Fantifa"
+    },
+    "parentLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "feminism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q116457385"
+    },
+    "parent": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q278364"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Fantifa"
+    },
+    "parentLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "post-World War II anti-fascism"
+    }
+   }
+  ]
+ }
+}
