@@ -14,6 +14,7 @@ WORKDIR /app
 
 COPY pyproject.toml README.md ./
 COPY fd_zhengxin_reference ./fd_zhengxin_reference
+COPY seed ./seed
 
 RUN if [ -n "$PIP_INDEX_URL" ]; then pip install --no-cache-dir -i "$PIP_INDEX_URL" .; else pip install --no-cache-dir .; fi \
  && useradd -m -u 1000 appuser
