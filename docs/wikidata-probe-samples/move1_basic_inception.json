@@ -1,0 +1,308 @@
+{
+ "head": {
+  "vars": [
+   "m",
+   "mLabel",
+   "inception",
+   "countryLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6199"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "anarchism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6223"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "fascism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6235"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "nationalism"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1800-01-01T00:00:00Z"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q7252"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "feminism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19042"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Tea Party movement"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "United States"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q42418"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Taliban"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1994-01-01T00:00:00Z"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Afghanistan"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51122"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Unification of Italy"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Kingdom of Italy"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q51122"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Unification of Italy"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Kingdom of Sardinia"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q83372"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Bolsheviks"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1903-01-01T00:00:00Z"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q83896"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Young Turks"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ottoman Empire"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q109806"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Baodiao movement"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q114213"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Arab nationalism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q127393"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "autonomism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q131372"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Hussites"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q155812"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Pan-Germanism"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Luxembourg"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q155812"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Pan-Germanism"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Switzerland"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q155812"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Pan-Germanism"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Austria"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q155812"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Pan-Germanism"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Germany"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q155812"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Pan-Germanism"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Liechtenstein"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q166807"
+    },
+    "mLabel": {
+     "type": "literal",
+     "value": "Q166807"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2003-01-01T00:00:00Z"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Argentina"
+    }
+   }
+  ]
+ }
+}

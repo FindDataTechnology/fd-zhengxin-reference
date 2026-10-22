@@ -1,0 +1,424 @@
+{
+ "head": {
+  "vars": [
+   "event",
+   "eventLabel",
+   "when",
+   "countryLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q5671505"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1880-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Revolution of 1880"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Argentina"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q5671505"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1880-06-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Revolution of 1880"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Argentina"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q5684272"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1954-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Hawaii Democratic Revolution of 1954"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "United States"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q5792513"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "182500000-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "type": "literal",
+     "value": "Q5792513"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Uruguay"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q5792513"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "182500000-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "type": "literal",
+     "value": "Q5792513"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Viceroyalty of the Río de la Plata"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q5944417"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1812-12-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Quito's revolutionary process"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Real Audiencia de Quito"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6107157"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1871-06-30T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "1871 Guatemalan Revolution"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Guatemala"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6107169"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1858-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "type": "literal",
+     "value": "Q6107169"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Uruguay"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6107173"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1874-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Revolution of 1874"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Argentina"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6107175"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1904-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Uruguayan revolution of 1904"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Uruguay"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6107179"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1934-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Revolution of 1934 in the Basque Country"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Second Spanish Republic"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6107187"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1810-09-14T00:00:00Z"
+    },
+    "eventLabel": {
+     "type": "literal",
+     "value": "Q6107187"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Upper Peru"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6107192"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1811-06-20T00:00:00Z"
+    },
+    "eventLabel": {
+     "type": "literal",
+     "value": "Q6107192"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Bolivia"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6107206"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1876-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Tuxtepec revolution"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mexico"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6107215"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1811-05-14T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Revolution of May 1811"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Viceroyalty of the Río de la Plata"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6107220"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1944-05-28T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ecuadorian Revolution of 1944"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ecuador"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6107265"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1875-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Tricolor Revolution"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Uruguay"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6464343"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1809-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "La Paz Revolution"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Bolivia"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q6507837"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1833-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Le Van Khoi revolt"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q7318712"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1905-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Revolution in the Kingdom of Poland"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Congress Poland"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,360 @@
+{
+ "head": {
+  "vars": [
+   "party",
+   "partyLabelZh",
+   "ideologyLabel",
+   "inception",
+   "dissolved"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "共產主義"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "社會主義愛國主義"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "邓小平理论"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "“三个代表”重要思想"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "中国特色社会主义"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "科學發展觀"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "中国统一"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "习近平新时代中国特色社会主义思想"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q21892"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "社会自由主义"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1994-10-02T00:00:00Z"
+    },
+    "dissolved": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2025-12-14T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q21916"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "社會保守主義"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1992-07-10T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q21916"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "中国民族主义"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1992-07-10T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q23055"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "自由主義"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2006-03-19T00:00:00Z"
+    },
+    "dissolved": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2023-05-27T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q23055"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "社会自由主义"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2006-03-19T00:00:00Z"
+    },
+    "dissolved": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2023-05-27T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q23055"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "宪政主义"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2006-03-19T00:00:00Z"
+    },
+    "dissolved": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2023-05-27T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q23055"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "香港本土運動"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2006-03-19T00:00:00Z"
+    },
+    "dissolved": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2023-05-27T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q23060"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "經濟自由主義"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1993-06-26T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q23060"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "自由保守主義"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1993-06-26T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q23062"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "中国民族主义"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1948-04-17T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q197765"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "中国特色社会主义"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1925-10-10T00:00:00Z"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q660342"
+    },
+    "ideologyLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "社会自由主义"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2005-01-01T00:00:00Z"
+    }
+   }
+  ]
+ }
+}

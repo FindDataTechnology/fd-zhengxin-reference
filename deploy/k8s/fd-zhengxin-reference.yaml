@@ -1,0 +1,63 @@
+# fd-zhengxin-reference — prod (fd-prod)
+# 政心参照系 MCP（FastMCP streamable-http /mcp on :8000）。
+# 集群部署在后续波次接通（本清单先落形制，照 fd-zhesi-reference 配方）；
+# env ← Secret fd-zhengxin-reference-env（键名：FDZX_REF_DB / FDZX_REF_PROXY /
+# FDZX_SNAPSHOT_DIR；Secret 集群内手工创建不入 git）。
+# 资源档：requests 保持轻（fd-prod 余量小），但 limits 必须给足——参照系线
+# 实测教训（fd-zhesi-reference 256Mi 旧值 13 天 12 次 OOMKilled，2026-10-19），
+# 1Gi 是「快照解析 + 连接池」的安全边际。
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fd-zhengxin-reference
+  namespace: fd-prod
+  labels:
+    app.kubernetes.io/name: fd-zhengxin-reference
+    app.kubernetes.io/part-of: finddata
+    app.kubernetes.io/environment: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: fd-zhengxin-reference
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: fd-zhengxin-reference
+        app.kubernetes.io/part-of: finddata
+        app.kubernetes.io/environment: production
+    spec:
+      containers:
+        - name: mcp
+          image: ccr.ccs.tencentyun.com/finddata-business/fd-zhengxin-reference:main
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8000
+          readinessProbe:
+            tcpSocket: { port: http }
+            initialDelaySeconds: 3
+          envFrom:
+            - secretRef:
+                name: fd-zhengxin-reference-env
+          resources:
+            requests: { cpu: 20m, memory: 96Mi }
+            limits: { cpu: 500m, memory: 1Gi }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fd-zhengxin-reference
+  namespace: fd-prod
+  labels:
+    app.kubernetes.io/name: fd-zhengxin-reference
+    app.kubernetes.io/part-of: finddata
+spec:
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: fd-zhengxin-reference
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      nodePort: 31885

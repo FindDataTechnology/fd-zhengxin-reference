@@ -1,0 +1,288 @@
+{
+ "head": {
+  "vars": [
+   "p",
+   "pLabel",
+   "pDesc"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P102"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "the political party of which a person is or has been a member or otherwise affiliated"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P463"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "organization, club or musical group to which the subject belongs. Do not use for membership in ethnic or social groups, nor for holding a political position, such as a member of parliament (use P39 for that)"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P155"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "immediately prior item in a series of which the subject is a part, preferably use as qualifier of P179 [if the subject has replaced the preceding item, e.g. political offices, use \"replaces\" (P1365)]"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P156"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "immediately following item in a series of which the subject is a part, preferably use as qualifier of P179 [if the subject has been replaced, e.g. political offices, use \"replaced by\" (P1366)]"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P1560"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "equivalent name (with respect to the meaning of the name) in the same language: female version of a male first name, male version of a female first name. Add primarily the closest matching one"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P1365"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "person, state or item replaced. Use \"structure replaces\" (P1398) for structures. Use \"follows\" (P155) if the previous item was not replaced or predecessor and successor are identical"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P1366"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "other person or item which continues the item by replacing it in its role. Use P156 (\"followed by\") if the item is not replaced nor identical, but adds to the series (e.g. books in a series)"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P361"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "object of which the subject is a part (as directly as possible); inverse property of \"has part\" (P527, see also \"has parts of the class\" (P2670))"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P1387"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "political position within the left–right political spectrum"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P1142"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "political ideology of an organization or person or of a work (such as a newspaper)"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P39"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "subject currently or formerly holds the object position or public office"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P726"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "person or party that is an option for an office in this election"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P991"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "person(s) or political organization(s) elected after the election"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P2650"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "item of special or vested interest to this person or organisation"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P607"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "battles, wars or other military engagements in which the person or item participated"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P1344"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "event in which a person, organization or creative work was/is a participant; inverse of P710 or P1923"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P527"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "part of this subject; inverse property of \"part of\" (P361). See also \"has parts of the class\" (P2670)."
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P3342"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "person linked to the item in any possible way"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P571"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "time when an entity begins to exist; for date of official opening use P1619"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P585"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "date something took place, existed or a statement was true; for providing time use the \"refine date\" property (P4241)"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P580"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "time an entity begins to exist or a statement starts being valid"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P582"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "moment when an entity ceases to exist and a statement stops being entirely valid or no longer be true"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P569"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "date on which the subject was born"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P570"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "date on which the subject died"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P27"
+    },
+    "pDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "the object is a country that recognizes the subject as its citizen"
+    }
+   }
+  ]
+ }
+}

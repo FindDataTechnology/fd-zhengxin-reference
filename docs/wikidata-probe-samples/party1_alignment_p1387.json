@@ -1,0 +1,427 @@
+{
+ "head": {
+  "vars": [
+   "party",
+   "partyLabel",
+   "alignLabel",
+   "inception"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2914027"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2012-10-07T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Business and Professionals Alliance for Hong Kong"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2915024"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1998-01-01T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Partai Bulan Bintang"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2916522"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1999-02-23T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Herut – The National Movement"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2919817"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1983-01-01T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ometz"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2980127"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1794-01-01T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Club de Clichy"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2994036"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1994-01-01T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Liberal Democratic Party of Belarus"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2996370"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1997-01-01T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Citizens' Convergence"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3037095"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Herrerism"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3039884"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1979-01-01T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Spanish Democratic Right"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3039891"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1930-01-01T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Derecha Regional Valenciana"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3055016"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1972-01-05T00:00:00Z"
+    },
+    "partyLabel": {
+     "type": "literal",
+     "value": "Q3055016"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3086449"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1982-01-01T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Party for the Organization of a Free Brittany"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3087523"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1982-08-30T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Valencian Union"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3202705"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2004-01-01T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Future Together"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3208379"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2012-07-01T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "The Strong Right"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3301730"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2011-02-17T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Party for Justice, Integration and Unity"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3326518"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2008-01-01T00:00:00Z"
+    },
+    "partyLabel": {
+     "type": "literal",
+     "value": "Q3326518"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3326585"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2008-01-01T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Movement for Diversity"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3326610"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1990-01-01T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "National Salvation Movement"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3363267"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1902-12-04T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Free Conservatives"
+    },
+    "alignLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing"
+    }
+   }
+  ]
+ }
+}

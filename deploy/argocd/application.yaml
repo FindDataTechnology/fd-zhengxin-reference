@@ -1,0 +1,27 @@
+# ArgoCD Application — fd-zhengxin-reference（cheap 集群 fd-prod）。
+# 集群接入在后续波次（本清单先落形制，照 fd-zhesi-reference 配方）；
+# fd-wire 同法：Application 放在同步路径（deploy/k8s）之外避免自引用；
+# GitOps 只管工作负载清单；Secret 集群内手工创建不入 git。
+# 前置（后续波次）：argocd ns 建 repo 凭据 secret（repo-fd-zhengxin-reference）
+# + app secret（fd-zhengxin-reference-env），否则首同步 ImagePullBackOff /
+# CreateContainerConfigError。
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fd-zhengxin-reference
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://gitee.com/FindDataTechnology/fd-zhengxin-reference.git
+    targetRevision: main
+    path: deploy/k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: fd-prod
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

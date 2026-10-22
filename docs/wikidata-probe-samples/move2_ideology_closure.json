@@ -1,0 +1,368 @@
+{
+ "head": {
+  "vars": [
+   "m",
+   "mLabel",
+   "ideologyLabel",
+   "inception"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q331852"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1971-01-01T00:00:00Z"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Kach"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Greater Israel"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q331852"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1971-01-01T00:00:00Z"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Kach"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "religious Zionism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q331852"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1971-01-01T00:00:00Z"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Kach"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Kahanism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q331852"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1971-01-01T00:00:00Z"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Kach"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "hebrew theocracy"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q378112"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1999-01-01T00:00:00Z"
+    },
+    "mLabel": {
+     "type": "literal",
+     "value": "Q378112"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Corsican nationalism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q459960"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1983-01-01T00:00:00Z"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Sudan People's Liberation Movement"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "nationalism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q465140"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1968-07-28T00:00:00Z"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "American Indian Movement"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Pan-Indianism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q493740"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Autonome Nationalisten"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "nationalism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q493740"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Autonome Nationalisten"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Nazism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q493740"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Autonome Nationalisten"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "anti-capitalism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q493740"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Autonome Nationalisten"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "anti-Zionism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q493740"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Autonome Nationalisten"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Strasserism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q518661"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Green armies"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "anarchism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q518661"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Green armies"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "trade unionism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q518661"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Green armies"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "anti-Sovietism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q518661"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Green armies"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "federalism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q518661"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Green armies"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Narodniks"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q518661"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Green armies"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Socialist Revolutionary Party"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q518661"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Green armies"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "agrarianism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q518661"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Green armies"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republicanism"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,177 @@
+{
+ "head": {
+  "vars": [
+   "p",
+   "pLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P13319"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "CriticDB author ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P14093"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "CriticDB game ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P14778"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Criticker film ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P12648"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Kritikanstvo critic ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P1712"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Metacritic ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P12080"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Metacritic company ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P12054"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Metacritic game ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P12078"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Metacritic numeric game ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P12079"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Metacritic publication ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P14008"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Metacritic video game genre ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P12942"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "MobyGames critic ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P2864"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "OpenCritic ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P8487"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "OpenCritic critic ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P11223"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "OpenCritic outlet ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P7968"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "VR GameCritic ID"
+    }
+   }
+  ]
+ }
+}

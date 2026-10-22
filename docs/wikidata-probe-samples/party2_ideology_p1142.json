@@ -1,0 +1,535 @@
+{
+ "head": {
+  "vars": [
+   "party",
+   "partyLabel",
+   "countryLabel",
+   "ideologyLabel",
+   "inception"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Chinese Communist Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "People's Republic of China"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Deng Xiaoping Theory"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Chinese Communist Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "People's Republic of China"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Theory of Three Represents"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Chinese Communist Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "People's Republic of China"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "socialism with Chinese characteristics"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Chinese Communist Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "People's Republic of China"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Scientific Outlook on Development"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Chinese Communist Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "People's Republic of China"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Chinese unification"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q17427"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1921-07-23T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Chinese Communist Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "People's Republic of China"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19077"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2001-08-14T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Justice and Development Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "euroscepticism"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19077"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2001-08-14T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Justice and Development Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "right-wing populism"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19077"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2001-08-14T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Justice and Development Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "economic nationalism"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19077"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2001-08-14T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Justice and Development Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "neo-Ottomanism"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19077"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2001-08-14T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Justice and Development Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "economic liberalism"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19077"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2001-08-14T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Justice and Development Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "national conservatism"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19077"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2001-08-14T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Justice and Development Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "social conservatism"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19077"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2001-08-14T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Justice and Development Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "centralism"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19077"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2001-08-14T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Justice and Development Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Conservative democracy"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19077"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2001-08-14T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Justice and Development Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Erdoğanism"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19077"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2001-08-14T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Justice and Development Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "conservatism in Turkey"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19077"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2001-08-14T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Justice and Development Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Traditionalist School"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19079"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1923-09-09T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican People's Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "social democracy"
+    }
+   },
+   {
+    "party": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19079"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1923-09-09T00:00:00Z"
+    },
+    "partyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republican People's Party"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Turkey"
+    },
+    "ideologyLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "secularism"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "mcp-tool-surface/v1",
+  "server": "fd-zhengxin-reference",
+  "entry_path": "/fd-zhengxin-reference",
+  "product_line": "lex",
+  "hosting": ["shared-instance"],
+  "description": "政心（lex 第四模块）参照系 MCP：政治概念（SEP 引用层 + 中国线）、思潮坐标（MARPOR + 中国线）、思想关系边（Wikidata + 中国线）、政体指标时序（V-Dem + MARPOR）。对接组装外部真源（不自建抽取），逐结果溯源（带 snapshot_version），许可门纪律（未过门即不摄取、缺口可见），可私有化部署。",
+  "tools": [
+    {"name": "concept_lookup", "tracking_task": "TBD（骨架占位）"},
+    {"name": "ideology_query", "tracking_task": "TBD（骨架占位）"},
+    {"name": "relation_query", "tracking_task": "TBD（骨架占位）"},
+    {"name": "regime_timeseries", "tracking_task": "TBD（骨架占位）"},
+    {"name": "source_status", "tracking_task": "TBD（骨架已接线，台账随源状态）"}
+  ],
+  "skills_eligible_for_packs": [],
+  "notes": "骨架期占位工具：空结果必带 reason（blocked/upstream/unreachable/not_ingested），不编造数据。五源（V-Dem/MARPOR/Wikidata/SEP/中国线）经许可门（license.py，证据 docs/data-license.md 2026-10-23 核验）：marpor/china-line 评审中 → not_ingested（reason=license_unconfirmed，带 gate_detail）；v-dem 已确认 CC BY-SA 4.0（ShareAlike 只在导出面触发，摄取限定 Core/Country-Date 变体）；wikidata/sep 已确认（CC0 / 只链不抄）。摄取与接线在后续波次。"
+}

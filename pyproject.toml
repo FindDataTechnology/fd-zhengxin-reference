@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fd-zhengxin-reference"
+version = "0.1.0"
+description = "政心（lex 第四模块）参照系 MCP：政治概念/思潮坐标/关系/政体时序四类查询的外部真源（V-Dem/MARPOR/Wikidata/SEP/中国线）对接组装，逐结果溯源，许可门纪律，可私有化部署。"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "FindDataTechnology" }]
+dependencies = [
+    "fastmcp>=3.4,<4",
+    "click",
+    "uvicorn",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio"]
+
+[project.scripts]
+fd-zhengxin-reference = "fd_zhengxin_reference.cli:cli"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.setuptools]
+packages = ["fd_zhengxin_reference"]

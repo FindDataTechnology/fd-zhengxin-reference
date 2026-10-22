@@ -1,0 +1,433 @@
+{
+ "head": {
+  "vars": [
+   "event",
+   "eventLabel",
+   "when",
+   "countryLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q137036104"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2025-11-26T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2025 Guinea-Bissau coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Guinea-Bissau"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q136290253"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2025-01-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Nepal government coup 2025"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Nepal"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q117100709"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2023-07-26T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2023 Nigerien coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Niger"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q114341504"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2022-09-30T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "September 2022 Burkina Faso coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Burkina Faso"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q110663445"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2022-01-23T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "January 2022 Burkina Faso coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Burkina Faso"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q109229068"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2021-10-25T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2021 Sudanese coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Sudan"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q108419092"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2021-09-05T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2021 Guinean coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Guinea"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q106975429"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2021-05-24T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2021 Malian coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mali"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q105180889"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2021-02-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2021 Myanmar coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Myanmar"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q98457371"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2020-08-18T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2020 Malian coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mali"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q63096026"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2019-04-11T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2019 Sudanese coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Sudan"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q55669424"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2017-03-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "type": "literal",
+     "value": "Q55669424"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "South Korea"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q18145759"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2015-02-06T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Houthi takeover in Yemen"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Yemen"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q16914766"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2014-05-22T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2014 Thai coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Thailand"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q56356011"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2014-02-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "18–21 February 2014 clashes in Ukraine"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ukraine"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q13605743"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2013-07-03T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2013 Egyptian coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Egypt"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q15278872"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2013-03-24T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Battle of Bangui"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Central African Republic"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q8964620"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2013-03-01T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2013 Central African Republic coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Central African Republic"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q621827"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2012-04-12T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2012 Guinea-Bissau coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Guinea-Bissau"
+    }
+   },
+   {
+    "event": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q875912"
+    },
+    "when": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2012-04-08T00:00:00Z"
+    },
+    "eventLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2012 Malian coup d'état"
+    },
+    "countryLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mali"
+    }
+   }
+  ]
+ }
+}

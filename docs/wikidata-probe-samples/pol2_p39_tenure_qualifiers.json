@@ -1,0 +1,480 @@
+{
+ "head": {
+  "vars": [
+   "person",
+   "personLabel",
+   "positionLabel",
+   "start",
+   "end"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q302"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "耶稣"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "先知"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "0030-01-01T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q76"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "贝拉克·奥巴马"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "美國總統"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2009-01-20T00:00:00Z"
+    },
+    "end": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2017-01-20T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q76"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "贝拉克·奥巴马"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "候任美國總統"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2008-11-04T00:00:00Z"
+    },
+    "end": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2009-01-20T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q76"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "贝拉克·奥巴马"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "美國參議員"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2007-01-03T00:00:00Z"
+    },
+    "end": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2008-11-16T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q76"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "贝拉克·奥巴马"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "美國參議員"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2005-01-03T00:00:00Z"
+    },
+    "end": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2007-01-03T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q76"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "贝拉克·奥巴马"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "伊利諾州參議員"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1997-01-08T00:00:00Z"
+    },
+    "end": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2004-11-04T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q22686"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "唐納·川普"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "美國總統"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2025-01-20T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q22686"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "唐納·川普"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "美國總統"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2017-01-20T00:00:00Z"
+    },
+    "end": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2021-01-20T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q22686"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "唐納·川普"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "首席执行官"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1971-01-01T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q22686"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "唐納·川普"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "主管"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q22686"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "唐納·川普"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "会长"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1971-01-01T00:00:00Z"
+    },
+    "end": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2017-01-01T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q22686"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "唐納·川普"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "候任美國總統"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2016-11-09T00:00:00Z"
+    },
+    "end": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2017-01-20T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q22686"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "唐納·川普"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "候任美國總統"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2024-11-06T00:00:00Z"
+    },
+    "end": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2025-01-20T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q352"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "阿道夫·希特勒"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "聯邦大總統"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1934-08-02T00:00:00Z"
+    },
+    "end": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1945-04-30T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q352"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "阿道夫·希特勒"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "國家代理官"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1933-01-30T00:00:00Z"
+    },
+    "end": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1945-04-30T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q352"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "阿道夫·希特勒"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "帝國總理"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1933-01-30T00:00:00Z"
+    },
+    "end": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1945-04-30T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q352"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "阿道夫·希特勒"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "纳粹德国国会议员"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q352"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "阿道夫·希特勒"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "魏玛共和国国会议员"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q937"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "阿尔伯特·爱因斯坦"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "教授"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1911-01-01T00:00:00Z"
+    }
+   },
+   {
+    "person": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q7747"
+    },
+    "personLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "弗拉基米尔·普京"
+    },
+    "positionLabel": {
+     "xml:lang": "zh",
+     "type": "literal",
+     "value": "主席"
+    },
+    "start": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2012-07-16T00:00:00Z"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,125 @@
+{
+ "head": {
+  "vars": [
+   "item",
+   "itemLabel",
+   "itemDesc"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q8079"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Wii"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "seventh-generation home video game console by Nintendo"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3933966"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Revolution"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2009 studio album by Miranda Lambert"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q60696841"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Revolution"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "vocal track by The Beatles; 1968 studio recording"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q10931"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "revolution"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "fundamental change in power or organizational structures that takes place in a relatively short period of time"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q7318658"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Revolution"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "1986 puzzle video game"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q1954670"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Revolution"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2012 studio album by Lacrimosa"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q309095"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "New England Revolution"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "professional soccer club based in Boston, Massachusetts, United States"
+    }
+   }
+  ]
+ }
+}

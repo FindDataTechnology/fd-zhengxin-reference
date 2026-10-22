@@ -1,0 +1,107 @@
+{
+ "head": {
+  "vars": [
+   "c",
+   "cLabel",
+   "cDesc"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "c": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q82955"
+    },
+    "cDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "person who seeks or holds a political office or mandate or is otherwise politically active"
+    }
+   },
+   {
+    "c": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q7278"
+    },
+    "cDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "organization that seeks to influence government policy and actions and be elected to directly take part on government or legislation"
+    }
+   },
+   {
+    "c": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q40231"
+    },
+    "cDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "process by which a population chooses the holder of a public office"
+    }
+   },
+   {
+    "c": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q184785"
+    },
+    "cDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "American author (1941–2021)"
+    }
+   },
+   {
+    "c": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q211642"
+    },
+    "cDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Finnish mathematician (1907-1996)"
+    }
+   },
+   {
+    "c": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q219948"
+    },
+    "cDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Japanese manga artist"
+    }
+   },
+   {
+    "c": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q170450"
+    }
+   },
+   {
+    "c": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q41487"
+    },
+    "cDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "judicial institution with the authority to resolve legal disputes"
+    }
+   },
+   {
+    "c": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q431289"
+    },
+    "cDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "identification for a good or service"
+    }
+   }
+  ]
+ }
+}

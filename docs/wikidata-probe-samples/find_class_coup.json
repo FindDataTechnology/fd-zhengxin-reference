@@ -1,0 +1,125 @@
+{
+ "head": {
+  "vars": [
+   "item",
+   "itemLabel",
+   "itemDesc"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q45382"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "coup d'état"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "act in which a segment of the military or government elites uses force to illegally and overtly overthrow an incumbent government in an attempt to seize state power"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q125066474"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Coup d'Etat"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2012 Del Rey edition"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q14931242"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Coup D'Etat"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2013 studio album by G-Dragon"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q29415905"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Coup D'etat"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "episode of Stargate Atlantis (S2 E17)"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3281774"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Coup d'Etat"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "album by The Plasmatics"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q11194955"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Coup d'Etat"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2002 studio album by Syrup16g"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q55773463"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Coup d'Etat"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "2013 song by G-Dragon"
+    }
+   }
+  ]
+ }
+}

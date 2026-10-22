@@ -1,0 +1,109 @@
+{
+ "head": {
+  "vars": [
+   "item",
+   "itemLabel",
+   "itemDesc"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2738074"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "political movement"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "movement to obtain a political goal"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2288851"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Sindhudesh"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Proposed State"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q140241271"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Political Movements and Violence in Central America"
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "monograph published by Cambridge University Press (2005)"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3326759"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Political Movement \"Social Democrats\""
+    },
+    "itemDesc": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Bulgarian political party"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q124742709"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Political Movement of Veterans and Patriots of Georgia"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q30674407"
+    },
+    "itemLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Political movements in Kashmir during the Dogra rule"
+    }
+   },
+   {
+    "item": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q108888349"
+    },
+    "itemLabel": {
+     "type": "literal",
+     "value": "Q108888349"
+    }
+   }
+  ]
+ }
+}

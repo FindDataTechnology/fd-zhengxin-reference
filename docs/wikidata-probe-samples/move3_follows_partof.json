@@ -1,0 +1,393 @@
+{
+ "head": {
+  "vars": [
+   "m",
+   "mLabel",
+   "prevLabel",
+   "inception"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q133857818"
+    },
+    "mLabel": {
+     "type": "literal",
+     "value": "Q133857818"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Last Generation"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q565213"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "French Committee of National Liberation"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Free France"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1943-06-03T00:00:00Z"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q565213"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "French Committee of National Liberation"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "French Civil and Military High Command"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1943-06-03T00:00:00Z"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q7229696"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Popular Front for the Liberation of Bahrain"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Popular Front for the Liberation of the Occupied Arabian Gulf"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1974-01-01T00:00:00Z"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q48537"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "civil rights movement"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "civil rights movement (1896–1954)"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q48537"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "civil rights movement"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Long Civil Rights Movement"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q137779107"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Independent Sao Paulo Movement"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Independent Sao Paulo Movement"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2014-01-25T00:00:00Z"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q63360776"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Ethiopian Unity Patriots Front"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Derg"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1993-01-01T00:00:00Z"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q174423"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "National Liberation Front of South Vietnam"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Vietnamese Independence League"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1954-07-21T00:00:00Z"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q598453"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Communist Party of Ecuador–Red Sun"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "¡Alfaro Vive, Carajo!"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1993-01-01T00:00:00Z"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q861979"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mahdi Army"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Promised Day Brigades"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2004-01-01T00:00:00Z"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q912908"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "South Sudan People's Defence Forces"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Sudan People's Liberation Movement"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1983-01-01T00:00:00Z"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q1977453"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "second-wave feminism"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "first-wave feminism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2914319"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "third-wave feminism"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "second-wave feminism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3326634"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Movement of Central African Liberators for Justice"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Union of Democratic Forces for Unity"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3517986"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "first-wave feminism"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "protofeminism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q7674188"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Tacuara Nationalist Movement"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Civic Revolutionary Movement"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1957-01-01T00:00:00Z"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q25382187"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "fourth-wave feminism"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "third-wave feminism"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q42424871"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Entre Rios Province"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Republic of Entre Ríos"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "1870-01-01T00:00:00Z"
+    }
+   },
+   {
+    "m": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q122926639"
+    },
+    "mLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Together Movement"
+    },
+    "prevLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Organizata Politike"
+    },
+    "inception": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+     "type": "literal",
+     "value": "2022-12-18T00:00:00Z"
+    }
+   }
+  ]
+ }
+}

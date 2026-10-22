@@ -1,0 +1,67 @@
+{
+ "head": {
+  "vars": [
+   "p",
+   "pLabel"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P7339"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Rivals.com ID"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P7047"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "enemy"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P5004"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "in opposition to"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P3323"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "opponent during disputation"
+    }
+   },
+   {
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/P461"
+    },
+    "pLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "opposite of"
+    }
+   }
+  ]
+ }
+}
