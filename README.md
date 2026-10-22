@@ -26,16 +26,38 @@ attribution / snapshot_version），同一查询在不同时间的结果差异�
 
 ## 源清单与许可门纪律
 
+`source_status` 的六源 = 下表四外部源 + 两个 curated 层；表内「中国线」是
+许可门（`license.py` LICENSE_REGISTRY）的语料层条目，不在六源台账之列。
+
 | 源 | 用途 | 许可门 |
 |---|---|---|
 | V-Dem | 政体指标时序（v2x_* 等指数） | 已确认（CC BY-SA 4.0，非 CC BY；ShareAlike 只在导出面触发，摄取限定 Core/Country-Date 变体） |
 | MARPOR | 政党宣言立场编码（rile 等） | 评审中（三点未确认：注册流程 / 科研用途边界 / 再分发授权；未过门不摄取） |
 | Wikidata | 全量层对齐（QID 回填） | 已确认（CC0） |
 | SEP | 概念引用层（只链不抄；政治思想词 26/26 命中实测） | 已确认（站点条款） |
-| 中国线 | 政治思想词条/人物/关系 | 评审中（源清单待定；未过门不摄取） |
+| 中国线 | 政治思想语料（词条/人物/关系全文层） | 评审中（源清单待定；未过门不摄取） |
 
-许可证据（`docs/data-license.md`，2026-10-23 官网一手核验；另有
-`docs/sep-coverage.md` 覆盖面实测与 `docs/wikidata-probe-samples/` SPARQL 探针样本）。
+两个 curated 层（不走许可门，编辑产出的结构化数据，非外部语料摄取）：
+
+| 层 | 内容 | 状态口径 |
+|---|---|---|
+| `china-seed` | 先秦诸子种子谱系（`seed/china_seed.json`；种子不造数值坐标） | 启动钩子幂等加载；结构契约自检 `scripts/check_seed.py`；seed 缺失时跳过并在 `source_status` 如实记 not_ingested |
+| `modern-index` | 近现代五思潮文献索引（只存条目元数据与链接，不存正文） | 启动钩子以不可变快照加载，dataset 名 `china-modern-index` |
+
+## 源许可台账指针
+
+源评审与侦察证据统一落 `docs/`，许可判定以 `license.py` 的 LICENSE_REGISTRY
+为准、`docs/data-license.md` 为证据台账（新源先补台账评审再动 registry）：
+
+- `docs/data-license.md` —— **源许可台账主文档**：V-Dem / MARPOR 官网一手
+  核验（2026-10-23），含许可原文引用、获取通道、对拟议用途的合规结论与
+  未确认清单（MARPOR 授权联系 manifesto-communication@wzb.eu）。
+- `docs/sep-coverage.md` —— SEP 政治思想词覆盖面实测（26/26 命中，含
+  「只链不抄」边界在通道层的确认）。
+- `docs/wikidata-probe.md` + `docs/wikidata-probe-samples/` —— Wikidata
+  政治面 SPARQL 通道实测与 36 份样本（极性判据表与摄取器姿势的证据）。
+- `docs/china-modern-sources.md` —— 中国近现代思潮公开学术源侦察与先秦
+  种子谱系来源定案（modern-index 与 china-seed 的固化来源）。
 
 许可门纪律（照 fd-zhesi-reference 的双门纪律）：**许可门**（静态事实：条款是否允许
 入库）未通过 → 该源不摄取，`source_status` 与相关查询工具一律报 `not_ingested`
@@ -55,5 +77,9 @@ unreachable / not_ingested），绝不编造数据。
 ```bash
 pip install -e ".[dev]"
 pytest
+python3 scripts/check_seed.py    # 先秦种子结构契约自检（只读，CI 可复用）
 fd-zhengxin-reference serve --port 8000   # /mcp + /healthz
 ```
+
+摄取出站代理：`FDZX_REF_PROXY`（空=直连；本地维基数据/维基百科被网络层
+拦截时设代理，见 `docs/china-modern-sources.md` 网络实况节）。
