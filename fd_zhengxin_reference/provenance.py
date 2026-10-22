@@ -12,6 +12,8 @@ from __future__ import annotations
 
 from datetime import date
 
+from .china_lineage import MODERN_ATTRIBUTION, SEED_ATTRIBUTION
+
 # 引用型 URL（只出现在 attribution / 链接文本里，不得作为 HTTP 请求目标）
 CITATION_URLS = {
     "v-dem": "https://www.v-dem.net",
@@ -30,6 +32,9 @@ ATTRIBUTIONS = {
     "wikidata": f"Wikidata (CC0), {CITATION_URLS['wikidata']}",
     "sep": f"Stanford Encyclopedia of Philosophy, {CITATION_URLS['sep']} (link-only citation)",
     "china-line": "中国线源（清单待定；过许可门前不摄取）",
+    # 两 curated 层：非外部语料摄取，归属文本以 china_lineage 的常量为唯一落点（不漂移）
+    "china-seed": SEED_ATTRIBUTION,
+    "modern-index": MODERN_ATTRIBUTION,
 }
 
 

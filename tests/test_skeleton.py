@@ -1,4 +1,4 @@
-"""骨架验证：服务可建、healthz 通、MCP 握手可完成、占位工具空结果必带原因、不编造数据。"""
+"""骨架验证：服务可建、healthz 通、MCP 握手可完成、查询工具空结果必带原因、不编造数据。"""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ import pytest
 
 from fd_zhengxin_reference import __version__
 from fd_zhengxin_reference.config import Settings
-from fd_zhengxin_reference.errors import NOT_INGESTED
+from fd_zhengxin_reference.errors import REASONS
 from fd_zhengxin_reference.server import SERVER_NAME, create_server
 
 TOOL_SURFACE = {
@@ -41,28 +41,48 @@ async def test_tool_surface() -> None:
 
 
 @pytest.mark.asyncio
-async def test_placeholder_tools_empty_with_reason() -> None:
-    """占位工具一律空结果 + not_ingested + hint（绝不编造数据）。"""
-    mcp = create_server(Settings(db_path=":memory:"))
+async def test_query_tools_empty_with_reason(tmp_path, monkeypatch) -> None:
+    """查询工具空结果必带 taxonomy reason + hint（绝不编造、绝不静默为空）。
+
+    断源形态（接线后的骨架基线）：SEP 不可达（离线桩）、wikidata/marpor/v-dem
+    未摄取——curated 层（china-seed/modern-index）由启动钩子加载，但查询词避开
+    它们以走空路径。深口径的断源联测见 tests/test_tools_wiring.py。
+    """
+    from fd_zhengxin_reference import sep_politics
+    from fd_zhengxin_reference.sep_politics import SepUnreachable
+
+    monkeypatch.setenv("FDZX_REF_DB", str(tmp_path / "ref.db"))
+    monkeypatch.setenv("FDZX_SNAPSHOT_DIR", str(tmp_path / "snapshots"))
+
+    async def offline(*a, **kw):
+        raise SepUnreachable("offline")
+
+    monkeypatch.setattr(sep_politics, "fetch_search_html", offline)
+    mcp = create_server()
     cases = {
-        "concept_lookup": {"term": "自由主义"},
-        "ideology_query": {"name": "保守主义"},
-        "relation_query": {"source": "孔子", "target": "荀子"},
-        "regime_timeseries": {"country": "CHN", "indicator": "v2x_polyarchy"},
+        "concept_lookup": {"term": "zzznonsense"},  # 库内无 + SEP 不可达 → unreachable
+        "ideology_query": {"name": "保守主义"},  # wikidata 未摄取 + marpor 门关 → not_ingested
+        "relation_query": {"source": "苏格拉底", "target": "柏拉图"},  # 两源均未命中
+        "regime_timeseries": {"country": "CHN", "indicator": "v2x_polyarchy"},  # v-dem 未摄取
     }
     for name, args in cases.items():
         out = await call_tool(mcp, name, **args)
         assert out["results"] == []
-        assert out["reason"] == NOT_INGESTED
-        assert out["hint"]  # 空结果必须能解释自己（喂源与许可门状态）
+        assert out["reason"] in REASONS
+        assert out["hint"]  # 空结果必须能解释自己（各源状态与缺口原因）
 
 
 @pytest.mark.asyncio
 async def test_mcp_handshake(tmp_path, monkeypatch) -> None:
-    """MCP 握手：Client 连接（=initialize）后 tools/list 五工具齐全。"""
+    """MCP 握手：Client 连接（=initialize）后 tools/list 五工具齐全。
+
+    FDZX_SNAPSHOT_DIR 隔离：启动钩子会物化 curated 层快照（china-seed /
+    china-modern-index），不隔离会写进默认快照根 ~/.fd-zhengxin/snapshots。
+    """
     from fastmcp import Client
 
     monkeypatch.setenv("FDZX_REF_DB", str(tmp_path / "ref.db"))
+    monkeypatch.setenv("FDZX_SNAPSHOT_DIR", str(tmp_path / "snapshots"))
     mcp = create_server()
     async with Client(mcp) as client:
         tools = await client.list_tools()
@@ -71,11 +91,12 @@ async def test_mcp_handshake(tmp_path, monkeypatch) -> None:
 
 @pytest.mark.asyncio
 async def test_source_status_empty_db(tmp_path, monkeypatch) -> None:
-    """空库：五源均 not_ingested 且带 reason；未过许可门的源指名 license_unconfirmed。
+    """空库：六源均 not_ingested 且带 reason；未过许可门的源指名 license_unconfirmed。
 
     许可口径与 docs/data-license.md（2026-10-23 核验）一致：v-dem 已确认
-    CC BY-SA 4.0（未摄取原因=not_ingested）；marpor 三点未确认、china-line
-    源清单未定 → license_unconfirmed 并带 gate_detail。
+    CC BY-SA 4.0（未摄取原因=not_ingested）；marpor 三点未确认 →
+    license_unconfirmed 并带 gate_detail。china-seed/modern-index 为 curated 层
+    （非外部语料、无许可门），此测试直调未走启动钩子 → not_ingested。
     """
     monkeypatch.setenv("FDZX_REF_DB", str(tmp_path / "ref.db"))
     from fd_zhengxin_reference.tools_registry import source_status
@@ -86,16 +107,19 @@ async def test_source_status_empty_db(tmp_path, monkeypatch) -> None:
         "marpor",
         "wikidata",
         "sep",
-        "china-line",
+        "china-seed",
+        "modern-index",
     }
     assert all(r["status"] == "not_ingested" and r["reason"] for r in out["results"])
     by = {r["source"]: r for r in out["results"]}
     # 未过许可门：原因指名许可门（评审中），并带评审待办；不是含糊的"未摄取"
-    for source in ("marpor", "china-line"):
-        assert by[source]["reason"] == "license_unconfirmed"
-        assert by[source]["gate_detail"]
+    assert by["marpor"]["reason"] == "license_unconfirmed"
+    assert by["marpor"]["gate_detail"]
     # 已过许可门但未摄取：原因就是 not_ingested（sep 为 on-demand 缓存层）
     for source in ("v-dem", "wikidata", "sep"):
+        assert by[source]["reason"] == "not_ingested"
+    # curated 层未加载（本测试直调 source_status，未走 create_server 启动钩子）
+    for source in ("china-seed", "modern-index"):
         assert by[source]["reason"] == "not_ingested"
 
 

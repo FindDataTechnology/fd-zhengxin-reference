@@ -14,11 +14,15 @@ attribution / snapshot_version），同一查询在不同时间的结果差异�
 
 | 工具 | 能力 | 数据源 | 状态 |
 |---|---|---|---|
-| `concept_lookup` | 政治概念定义摘要 + 引用链接（正文不落库） | SEP + 中国线 | 占位（not_ingested 带原因） |
-| `ideology_query` | 思潮/思想家/政党家族的政治坐标 | MARPOR + 中国线 | 占位（not_ingested 带原因） |
-| `relation_query` | 思想关系边：类型/极性/权重 | Wikidata + 中国线 | 占位（not_ingested 带原因） |
-| `regime_timeseries` | 国家×年份政体指标序列 | V-Dem + MARPOR | 占位（not_ingested 带原因） |
-| `source_status` | 各源摄取状态与缺口（未摄取必带原因） | 摄取台账表 | 已接线 |
+| `concept_lookup` | 政治概念定义摘要 + 引用链接（正文不落库） | SEP + 中国线种子概念 + 近现代思潮索引 | 已接线（多源融合，逐行 source 标注） |
+| `ideology_query` | 思潮/思想家/政党的政治坐标 | Wikidata（P1142/P1387）+ MARPOR | 已接线（MARPOR 门关 → not_ingested + license_unconfirmed） |
+| `relation_query` | 思想关系边：类型/极性/权重 | Wikidata（极性过滤直通）+ 中国线种子边 | 已接线（多源融合） |
+| `regime_timeseries` | 国家×年份政体指标序列 | V-Dem（含指标口径说明） | 已接线（摄取后直通；未摄取 not_ingested） |
+| `source_status` | 六源摄取状态与缺口（未摄取必带原因） | 摄取台账表 + 许可门 | 已接线 |
+
+启动初始化：`create_server` 以启动钩子形态幂等加载 curated 层（先秦种子谱系
+`china-seed` + 近现代五思潮索引 `modern-index`，需 schema.init 后调用）；DB 为
+`:memory:` 时跳过，seed 文件缺失时跳过并如实回报（缺口在 `source_status` 可见）。
 
 ## 源清单与许可门纪律
 
@@ -34,7 +38,7 @@ attribution / snapshot_version），同一查询在不同时间的结果差异�
 `docs/sep-coverage.md` 覆盖面实测与 `docs/wikidata-probe-samples/` SPARQL 探针样本）。
 
 许可门纪律（照 fd-zhesi-reference 的双门纪律）：**许可门**（静态事实：条款是否允许
-入库）未通过 → 该源不摄取，`source_status` 与占位工具一律报 `not_ingested`
+入库）未通过 → 该源不摄取，`source_status` 与相关查询工具一律报 `not_ingested`
 （reason=license_unconfirmed，带评审待办）；**可得性门**（动态事实：此刻能否取到）
 由探测记录区分「源挂了」与「解析器坏了」。空结果必带 reason（blocked / upstream /
 unreachable / not_ingested），绝不编造数据。

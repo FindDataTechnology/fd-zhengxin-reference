@@ -3,3 +3,6 @@ __pycache__/
 .pytest_cache/
 *.db
 .DS_Store
+
+# 原始数据快照（不入 git；人工下载放此处，见 vdem.py docstring）
+data/raw/
