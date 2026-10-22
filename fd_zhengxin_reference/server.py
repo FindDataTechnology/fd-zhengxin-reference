@@ -3,9 +3,10 @@
 四类查询（概念/思潮坐标/关系/政体时序）已接线到真源模块：tools_placeholder
 （模块历史名保留）挂 concept_lookup / ideology_query / relation_query /
 regime_timeseries，tools_registry 挂 source_status（六源台账）。HTTP 面挂 /mcp
-（MCP streamable-http），/healthz 供探活（cli.serve 拼装）。
+（MCP streamable-http），/healthz 供探活，/api/v1/* 是个人层只读 REST 锚点面
+（rest_api，D3）——cli.serve 拼装见 build_http_app。
 
-启动初始化：create_server 以**启动钩子**形态（非首次惰性）幂等加载 curated 层
+启动初始化：create_server 以**启动钩子**形式（非首次惰性）幂等加载 curated 层
 （china_seed 种子谱系 + modern_index 近现代索引），详见 bootstrap_curated 的说明。
 """
 
@@ -13,7 +14,7 @@ from __future__ import annotations
 
 from fastmcp import FastMCP
 
-from . import china_lineage, schema, tools_placeholder, tools_registry
+from . import china_lineage, rest_api, schema, tools_placeholder, tools_registry
 from .config import Settings
 
 SERVER_NAME = "fd-zhengxin-reference"
@@ -71,3 +72,27 @@ def create_server(settings: Settings | None = None) -> FastMCP:
     tools_placeholder.register(mcp, settings)
     tools_registry.register(mcp, settings)
     return mcp
+
+
+def build_http_app(settings: Settings | None = None):
+    """完整 HTTP 面：/mcp（MCP streamable-http）+ /healthz + /api/v1/*（只读 REST）。
+
+    cli.serve 与测试共用本拼装（route 追加顺序不影响：三个面路径互不相交）。
+    """
+    from starlette.requests import Request
+    from starlette.responses import JSONResponse
+    from starlette.routing import Route
+
+    settings = settings or Settings.from_env()
+    app = create_server(settings).http_app(path="/mcp")
+
+    async def healthz(_: Request) -> JSONResponse:
+        from . import __version__
+
+        return JSONResponse(
+            {"status": "ok", "service": SERVER_NAME, "version": __version__}
+        )
+
+    app.routes.append(Route("/healthz", healthz))
+    rest_api.add_routes(app, settings)
+    return app

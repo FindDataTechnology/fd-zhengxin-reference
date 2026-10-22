@@ -1,4 +1,4 @@
-"""CLI：serve（HTTP 面 = /mcp + /healthz）。"""
+"""CLI：serve（HTTP 面 = /mcp + /healthz + /api/v1/* 只读 REST 锚点）。"""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ import click
 import uvicorn
 
 from . import __version__
-from .server import SERVER_NAME, create_server
+from .server import build_http_app
 
 
 @click.group()
@@ -21,21 +21,8 @@ def cli() -> None:
 @click.option("--host", default="0.0.0.0", show_default=True)
 @click.option("--port", default=8000, show_default=True)
 def serve(host: str, port: int) -> None:
-    """启动 HTTP 服务（/mcp + /healthz）。"""
-    mcp = create_server()
-    app = mcp.http_app(path="/mcp")
-
-    from starlette.requests import Request
-    from starlette.responses import JSONResponse
-    from starlette.routing import Route
-
-    async def healthz(_: Request) -> JSONResponse:
-        return JSONResponse(
-            {"status": "ok", "service": SERVER_NAME, "version": __version__}
-        )
-
-    app.routes.append(Route("/healthz", healthz))
-
+    """启动 HTTP 服务（/mcp + /healthz + /api/v1/*）。"""
+    app = build_http_app()
     config = uvicorn.Config(app, host=host, port=port, log_level="info")
     asyncio.run(uvicorn.Server(config).serve())
 

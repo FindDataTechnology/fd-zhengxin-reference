@@ -94,7 +94,20 @@ def _resolve_seed_entity(conn, name: str) -> str | None:
 # ---------------------------------------------------------------- concept_lookup 各源
 
 def _seed_concept_leg(query: str, settings: Settings) -> dict:
-    """库内种子概念（concepts 表 #china-seed 行；启动钩子物化，离线可查）。"""
+    """库内种子概念（concepts 表 #china-seed 行；启动钩子物化，离线可查）。
+
+    行结构补齐（D2 对齐，主服务消费面必需字段）：概念行在基础字段（term/title/
+    url/snippet/retrieved_at）之外补三组结构面字段（读自种子不可变快照）：
+
+    - school：学派归属标签（concepts 表不存，快照 concepts[].school → schools
+      标签）——主服务定位/多视角闭环的归派依据；
+    - figures：关联人物 [{name, years}]（快照 concepts[].figures）——主服务
+      关系面（relation_query 人物对查询）的召回种子；
+    - weight：curated 直挂置信 1.0（人工提炼种子 + 精确标签命中 = 顶格置信，
+      与 wikidata 极性判据表顶格 P5004=1.0 同层）。
+
+    快照缺失时行退化为基础字段（无 school/figures/weight），不编造。
+    """
     conn = settings.connect()
     try:
         schema.init(conn)
@@ -104,6 +117,9 @@ def _seed_concept_leg(query: str, settings: Settings) -> dict:
             (query, "%" + china_lineage.SEED_CONCEPT_MARKER),
         ).fetchall()
         snap = snapshot.latest(conn, china_lineage.SEED_DATASET)
+        schools, figures_map, concepts_meta, _ = china_lineage.seed_maps(
+            china_lineage.seed_snapshot_payload(conn)
+        )
     finally:
         conn.close()
     if not rows:
@@ -112,6 +128,24 @@ def _seed_concept_leg(query: str, settings: Settings) -> dict:
             hint=f"库内种子概念无 {query!r}（先秦谱系 50 概念，精确标签匹配）",
         )
     sid = snap["snapshot_id"] if snap else None
+
+    def _extra(term: str) -> dict:
+        meta = concepts_meta.get(term)
+        if meta is None:
+            return {}
+        school = schools.get(meta.get("school"))
+        if not school:
+            return {}
+        return {
+            "school": school,
+            "figures": [
+                {"name": figures_map[fid]["label"], "years": figures_map[fid].get("years")}
+                for fid in meta.get("figures") or []
+                if fid in figures_map
+            ],
+            "weight": 1.0,
+        }
+
     return {
         "results": [
             {
@@ -120,6 +154,7 @@ def _seed_concept_leg(query: str, settings: Settings) -> dict:
                 "url": r["url"],
                 "snippet": r["snippet"],
                 "retrieved_at": r["retrieved_at"],
+                **_extra(r["term"]),
                 "provenance": provenance(
                     "china-seed",
                     stable_id=f"china-seed:concept:{query}",
@@ -149,7 +184,16 @@ def _modern_concept_leg(query: str, settings: Settings) -> dict:
             NOT_INGESTED,
             hint=f"近现代五思潮索引无 {query!r}（按思潮全称精确匹配，如「维新变法思潮」）",
         )
-    entry: dict = {"label": row["label"], "summary": None, "documents": []}
+    entry: dict = {
+        "label": row["label"],
+        "summary": None,
+        "documents": [],
+        # 行结构补齐（D2 对齐）：思潮本体按精确标签命中即自身定位——school 为
+        # 思潮自身标签（近现代思潮本身就是「学派/思潮维度」的坐标系节点），
+        # weight 1.0 同 curated 顶格口径。主服务学习地图/定位消费面按此归派。
+        "school": row["label"],
+        "weight": 1.0,
+    }
     if manifest:
         payload = json.loads(snapshot.read(manifest))
         for c in payload.get("currents", []):
@@ -215,13 +259,25 @@ def _wd_pair_leg(conn, src_name: str, tgt_name: str, src_qid: str | None,
 
 def _seed_pair_leg(conn, src_name: str, tgt_name: str, src_id: str | None,
                    tgt_id: str | None) -> dict:
-    """种子关系边：师承/批判/论战（relations 表 seed:china/ 命名空间，双向查）。"""
+    """种子关系边：师承/批判/论战（relations 表 seed:china/ 命名空间，双向查）。
+
+    行结构补齐（D2 对齐，主服务消费面必需字段）：边行在基础字段（source_id/
+    target_id/kind/polarity/snapshot_version）之外补端点人读名与结构面字段
+    （读自种子快照，快照缺失时退化为基础行）：
+
+    - source_name/target_name：端点人物标签（主服务先例链/下钻召回的显示与查询键）；
+    - source_school/target_school：端点学派标签；school 取 target（作用落地端）
+      的学派，无则退 source——主服务按此分组归派；
+    - target_years：target 人物的 curated 年代串原文（如「约前372–前289」，
+      不代解析，由消费面自行保守取值）；
+    - weight 1.0（curated 边顶格置信）+ key_text（边的出典证据文本）。
+    """
     if src_id is None or tgt_id is None:
         missing = [n for n, i in ((src_name, src_id), (tgt_name, tgt_id)) if i is None]
         return empty_result(
             NOT_INGESTED,
             hint=f"{'、'.join(repr(m) for m in missing)} 未命中先秦种子谱系"
-            "（40 人物精确标签匹配；china-line 语料层许可评审中，种子层之外无关系数据）",
+                 "（40 人物精确标签匹配；china-line 语料层许可评审中，种子层之外无关系数据）",
         )
     rows = conn.execute(
         "SELECT source_id, target_id, kind, polarity, snapshot_version FROM relations"
@@ -233,12 +289,40 @@ def _seed_pair_leg(conn, src_name: str, tgt_name: str, src_id: str | None,
         return empty_result(
             NOT_INGESTED,
             hint=f"{src_name!r} 与 {tgt_name!r} 均在种子谱系，但两者之间无边"
-            "（种子边集为 83 条师承/批判/论战，覆盖所录 40 人物）",
+                 "（种子边集为 83 条师承/批判/论战，覆盖所录 40 人物）",
         )
+    schools, figures_map, _, edges_meta = china_lineage.seed_maps(
+        china_lineage.seed_snapshot_payload(conn)
+    )
+
+    def _extra(source_id: str, target_id: str) -> dict:
+        src = figures_map.get(china_lineage.figure_id_of(source_id))
+        tgt = figures_map.get(china_lineage.figure_id_of(target_id))
+        out: dict = {}
+        if src:
+            out["source_name"] = src["label"]
+            out["source_school"] = schools.get(src["school"])
+        if tgt:
+            out["target_name"] = tgt["label"]
+            out["target_school"] = schools.get(tgt["school"])
+            if tgt.get("years"):
+                out["target_years"] = tgt["years"]
+        school = out.get("target_school") or out.get("source_school")
+        if school:
+            out["school"] = school
+            out["weight"] = 1.0
+        key_text = edges_meta.get(
+            (china_lineage.figure_id_of(source_id), china_lineage.figure_id_of(target_id))
+        )
+        if key_text:
+            out["key_text"] = key_text
+        return out
+
     return {
         "results": [
             {
                 **{k: r[k] for k in r.keys()},
+                **_extra(r["source_id"], r["target_id"]),
                 "provenance": provenance(
                     "china-seed",
                     stable_id=f"china-seed:relation:{r['source_id']}>{r['target_id']}",

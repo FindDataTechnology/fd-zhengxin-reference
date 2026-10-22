@@ -195,6 +195,29 @@ def test_bootstrap_skips_memory_db(tmp_path, monkeypatch) -> None:
 # ---------------------------------------------------------------- concept_lookup
 
 
+async def test_concept_lookup_seed_row_structure(mcp) -> None:
+    """D2 行结构补齐：种子概念行自带 school/figures/weight（消费面归派与召回
+    依据），id 锚在 provenance.stable_id；快照缺失字段不编造。"""
+    out = await call_tool(mcp, "concept_lookup", term="仁政")
+    assert len(out["results"]) == 1
+    row = out["results"][0]
+    assert row["provenance"]["stable_id"] == "china-seed:concept:仁政"
+    assert row["school"] == "儒家"
+    assert row["weight"] == 1.0
+    assert [f["name"] for f in row["figures"]] == ["孟轲（孟子）"]
+    assert row["figures"][0]["years"] == "约前372–前289"
+
+
+async def test_concept_lookup_modern_row_school(mcp) -> None:
+    """D2 行结构补齐：近现代思潮行 school=自身标签 + weight 1.0（精确标签
+    命中即定位到该思潮）。"""
+    out = await call_tool(mcp, "concept_lookup", term="自由主义思潮")
+    row = out["results"][0]
+    assert row["school"] == "自由主义思潮"
+    assert row["weight"] == 1.0
+    assert row["summary"]
+
+
 async def test_concept_lookup_seed_hit_with_sep_down(mcp) -> None:
     """SEP 断网不影响库内好源：种子概念照常返回（来源标注 + provenance），
     sep 分项如实记 unreachable——好源不受坏源影响。"""
@@ -319,6 +342,10 @@ async def test_relation_query_seed_influence_edge(mcp) -> None:
     assert edge["source_id"] == "seed:china/thinker/kongzi"
     assert edge["target_id"] == "seed:china/thinker/zengzi"
     assert edge["provenance"]["snapshot_version"].startswith("china-seed@")
+    # D2 行结构补齐：端点人读名 + 学派 + curated 权重 + 出典 key_text
+    assert edge["source_name"] == "孔子" and edge["target_name"] == "曾参（曾子）"
+    assert edge["school"] == "儒家" and edge["weight"] == 1.0
+    assert edge["key_text"].startswith("「参乎")
 
 
 async def test_relation_query_seed_critique_edge(mcp) -> None:

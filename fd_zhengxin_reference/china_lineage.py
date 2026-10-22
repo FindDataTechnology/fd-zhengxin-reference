@@ -475,6 +475,51 @@ def load_modern_index(
     }
 
 
+# ---------------------------------------------------------------- 快照结构面（行结构补齐用）
+
+def seed_snapshot_payload(conn: sqlite3.Connection) -> dict | None:
+    """种子谱系快照 JSON（schools/figures/concepts/edges 的结构面）。
+
+    行结构补齐（主服务消费面需要的 school/figures/出典等字段只在快照 JSON 里，
+    概念/关系表不存）：统一从这里读，读不到返回 None——调用方退化为基础行，
+    不编造。快照损坏（sha 不符）按缺失处理并如实抛出，不静默修复。
+    """
+    manifest = snapshot.latest(conn, SEED_DATASET)
+    if manifest is None:
+        return None
+    return json.loads(snapshot.read(manifest))
+
+
+def seed_maps(payload: dict | None) -> tuple[dict[str, str], dict[str, dict], dict[str, dict], dict[tuple[str, str], str]]:
+    """快照 payload → 四张查找表（None → 全空）：
+
+    - 学派标签表 {school_id: label}
+    - 人物表 {figure_id: {label, school, years, era}}
+    - 概念表 {concept_label: 原始 concept 节点}（school/figures/qid 等）
+    - 边出典表 {(source_id, target_id) 双向: evidence 出典文本}
+    """
+    if not payload:
+        return {}, {}, {}, {}
+    schools = {s["id"]: s["label"] for s in payload.get("schools") or []}
+    figures = {
+        f["id"]: {"label": f["label"], "school": f.get("school"),
+                  "years": f.get("years"), "era": f.get("era")}
+        for f in payload.get("figures") or []
+    }
+    concepts = {c["label"]: c for c in payload.get("concepts") or []}
+    edges: dict[tuple[str, str], str] = {}
+    for e in payload.get("edges") or []:
+        text = e.get("evidence") or ""
+        edges[(e["source"], e["target"])] = text
+        edges[(e["target"], e["source"])] = text  # 种子边查询面是双向的
+    return schools, figures, concepts, edges
+
+
+def figure_id_of(current_id: str) -> str:
+    """seed:china/thinker/<id> → <id>（关系行端点 → 快照人物表键）。"""
+    return str(current_id).rsplit("/", 1)[-1]
+
+
 # ---------------------------------------------------------------- 查询辅助
 
 def list_seed_currents(conn: sqlite3.Connection) -> list[dict]:
