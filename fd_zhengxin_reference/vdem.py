@@ -365,17 +365,46 @@ def _year_set(years: tuple[int, int] | Iterable[int] | int | None) -> set[int] |
 
 
 def _load_country_names(snap: dict | None) -> dict[str, str]:
-    """从快照 CSV 读 country_text_id -> country_name 名录（供按国名解析）。"""
+    """从快照 CSV 读 country_text_id -> country_name 名录（供按国名解析）。
+
+    流式读（2026-10-23：快照已是 212MB 级，read_bytes 整读曾把查询进程 OOM）——
+    名录是增强层，快照文件缺失/损坏时返回空表不炸查询。
+    """
     if not snap:
         return {}
-    reader = csv.DictReader(io.StringIO(snapshot.read(snap).decode("utf-8-sig")))
+    path = Path(snap.get("storage_path") or "")
+    if not path.is_file():
+        return {}
     names: dict[str, str] = {}
-    for rec in reader:
-        code = (rec.get("country_text_id") or "").strip()
-        name = (rec.get("country_name") or "").strip()
-        if code and name and code not in names:
-            names[code] = name
+    try:
+        with path.open("r", encoding="utf-8-sig", newline="") as fh:
+            reader = csv.DictReader(fh)
+            for rec in reader:
+                code = (rec.get("country_text_id") or "").strip()
+                name = (rec.get("country_name") or "").strip()
+                if code and name and code not in names:
+                    names[code] = name
+    except (OSError, UnicodeDecodeError):
+        return {}
     return names
+
+
+def _load_one_country_name(snap: dict | None, code: str) -> dict[str, str]:
+    """单国显示名（查询面用）：流式扫到即停，不整读快照、不建全表。"""
+    path = Path(snap.get("storage_path") or "") if snap else Path()
+    if not path.is_file():
+        return {}
+    try:
+        with path.open("r", encoding="utf-8-sig", newline="") as fh:
+            for rec in csv.DictReader(fh):
+                if (rec.get("country_text_id") or "").strip() == code:
+                    name = (rec.get("country_name") or "").strip()
+                    if name:
+                        return {code: name}
+                    return {}
+    except (OSError, UnicodeDecodeError):
+        pass
+    return {}
 
 
 def _resolve_country(conn, country: str, snap: dict | None) -> str | None:
@@ -464,7 +493,7 @@ def query_regime_timeseries(
             )
     present = sorted({ind for m in by_year.values() for ind in m})
     notes = {ind: INDICATOR_NOTES.get(ind, GENERIC_NOTE) for ind in present}
-    names = _load_country_names(snap) if snap else {}
+    names = _load_one_country_name(snap, code) if snap else {}
     results = [
         {
             "country_code": code,
