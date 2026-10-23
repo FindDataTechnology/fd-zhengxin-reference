@@ -193,9 +193,10 @@ def ingest_vdem(
     if not path.is_file():
         raise FileNotFoundError(f"V-Dem CSV 不存在：{path}")
     settings = settings or Settings.from_env()
-    content = path.read_bytes()
     try:
-        parsed = parse_vdem_csv(content, version=version, filename=path.name)
+        return _ingest_vdem_streaming(
+            path, settings=settings, version=version, source_url=source_url
+        )
     except VdemFormatError as exc:
         conn = settings.connect()
         try:
@@ -212,12 +213,43 @@ def ingest_vdem(
             "path": str(path),
         }
 
-    manifest = snapshot.store(
+
+def _ingest_vdem_streaming(
+    path: Path,
+    *,
+    settings: Settings,
+    version: str | None,
+    source_url: str | None,
+) -> dict:
+    """流式摄取主体（2026-10-23 生产 OOM ×2 后改流式，勿再物化整表）。"""
+    # 轻窥：header 校验 + 首行 version（避免整读 212MB 才发现结构错）
+    with path.open("r", encoding="utf-8-sig", newline="") as fh:
+        reader = csv.DictReader(fh)
+        header = list(reader.fieldnames or [])
+        missing = [c for c in REQUIRED_COLUMNS if c not in header]
+        if missing:
+            raise VdemFormatError(
+                f"缺官方必备列 {missing}（header={header[:8]}…）"
+            )
+        indicators_scan = [c for c in header if c.startswith("v2x_")]
+        if not indicators_scan:
+            raise VdemFormatError("无 v2x_* 指标列（非 V-Dem 聚合指标表？）")
+        first = next(iter(reader), None)
+        csv_version = (
+            (first.get("version") or "").strip() if first else ""
+        ) or None
+    detected = (
+        version
+        or csv_version
+        or _detect_version_from_filename(path.name)
+        or "unknown"
+    )
+    manifest = snapshot.store_file(
         DATASET,
-        parsed.version,
-        content,
+        detected,
+        path,
         source_url=source_url or DATA_PAGE,
-        attribution=_attribution(parsed.version),
+        attribution=_attribution(detected),
         probe_status="available",
         filename=path.name,
     )
@@ -226,24 +258,69 @@ def ingest_vdem(
         schema.init(conn)
         snapshot.record(conn, manifest)
         ts = _now()
-        conn.executemany(
-            "INSERT OR REPLACE INTO regime_indicators"
-            " (country_code, year, indicator, value, ingested_at, snapshot_version)"
-            " VALUES (?,?,?,?,?,?)",
-            [
-                (code, year, ind, val, ts, manifest.snapshot_id)
-                for code, year, ind, val in parsed.rows
-            ],
-        )
+        # 流式入库：不物化 parsed.rows（4M 行字典会把 512Mi~2Gi 的容器顶穿，
+        # 2026-10-23 生产实测 OOM ×2 后改流式）
+        names: dict[str, str] = {}
+        skipped = 0
+        years: set[int] = set()
+        row_count = 0
+        batch: list[tuple[str, int, str, float]] = []
+        with path.open("r", encoding="utf-8-sig", newline="") as fh:
+            reader = csv.DictReader(fh)
+            indicators = [c for c in (reader.fieldnames or []) if c.startswith("v2x_")]
+            for rec in reader:
+                code = (rec.get("country_text_id") or "").strip()
+                name = (rec.get("country_name") or "").strip()
+                if not code or not name:
+                    skipped += len(indicators)
+                    continue
+                names[code] = name
+                raw_year = (rec.get("year") or "").strip()
+                try:
+                    year = int(float(raw_year))
+                except ValueError:
+                    skipped += len(indicators)
+                    continue
+                years.add(year)
+                for ind in indicators:
+                    raw = rec.get(ind)
+                    if raw is None or not str(raw).strip():
+                        skipped += 1
+                        continue
+                    try:
+                        batch.append((code, year, ind, float(raw)))
+                    except ValueError:
+                        skipped += 1
+                if len(batch) >= 100_000:
+                    conn.executemany(
+                        "INSERT OR REPLACE INTO regime_indicators"
+                        " (country_code, year, indicator, value, ingested_at,"
+                        " snapshot_version) VALUES (?,?,?,?,?,?)",
+                        [(c_, y, i, v, ts, manifest.snapshot_id)
+                         for c_, y, i, v in batch],
+                    )
+                    row_count += len(batch)
+                    batch.clear()
+        if batch:
+            conn.executemany(
+                "INSERT OR REPLACE INTO regime_indicators"
+                " (country_code, year, indicator, value, ingested_at,"
+                " snapshot_version) VALUES (?,?,?,?,?,?)",
+                [(c_, y, i, v, ts, manifest.snapshot_id)
+                 for c_, y, i, v in batch],
+            )
+            row_count += len(batch)
+        if not row_count:
+            raise VdemFormatError(f"CSV 无可入行（skipped={skipped}）")
         _log(
             conn,
             "ok",
             {
-                "rows": len(parsed.rows),
-                "countries": len(parsed.country_names),
-                "indicators": len(parsed.indicators),
-                "skipped_values": parsed.skipped_values,
-                "version": parsed.version,
+                "rows": row_count,
+                "countries": len(names),
+                "indicators": len(indicators),
+                "skipped_values": skipped,
+                "version": detected,
                 "snapshot_id": manifest.snapshot_id,
                 "file": path.name,
             },
@@ -254,12 +331,12 @@ def ingest_vdem(
         "source": SOURCE,
         "status": "ok",
         "ingested": True,
-        "rows": len(parsed.rows),
-        "countries": len(parsed.country_names),
-        "indicators": parsed.indicators,
-        "skipped_values": parsed.skipped_values,
-        "version": parsed.version,
-        "years": {"from": parsed.years[0], "to": parsed.years[1]},
+        "rows": row_count,
+        "countries": len(names),
+        "indicators": indicators,
+        "skipped_values": skipped,
+        "version": detected,
+        "years": {"from": min(years), "to": max(years)},
         "snapshot_id": manifest.snapshot_id,
         "attribution": manifest.attribution,
         "provenance": provenance(

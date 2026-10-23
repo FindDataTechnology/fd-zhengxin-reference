@@ -112,6 +112,62 @@ def store(
     )
 
 
+def store_file(
+    dataset: str,
+    version: str,
+    path: Path | str,
+    *,
+    source_url: str | None = None,
+    attribution: str = "",
+    probe_status: str = "available",
+    filename: str | None = None,
+    root: Path | None = None,
+) -> SnapshotManifest:
+    """store() 的流式变体：大文件（如 V-Dem 212MB CSV）不整读进内存——
+    分块算 sha256 + 拷贝落盘，语义与 store() 等价（含幂等复用与篡改校验）。"""
+    src = Path(path)
+    fname = filename or src.name
+    h = hashlib.sha256()
+    size = 0
+    with src.open("rb") as fh:
+        while chunk := fh.read(1 << 20):
+            h.update(chunk)
+            size += len(chunk)
+    digest = h.hexdigest()
+    base = (root or root_dir()) / _safe(dataset) / digest
+    target = base / _safe(fname)
+    if target.is_file():
+        if _sha256_file(target) != digest:
+            raise SnapshotCorrupt(f"{target} 内容与路径 sha256 不符（快照被改写）")
+    else:
+        base.mkdir(parents=True, exist_ok=True)
+        tmp = base / (target.name + ".tmp")
+        shutil.copyfile(src, tmp)
+        shutil.move(str(tmp), str(target))
+    ts = _now()
+    return SnapshotManifest(
+        snapshot_id=make_id(dataset, version, digest),
+        dataset=dataset,
+        version=version,
+        fetched_at=ts,
+        source_url=source_url,
+        sha256=digest,
+        attribution=attribution,
+        probe_status=probe_status,
+        storage_path=str(target),
+        bytes=size,
+        created_at=ts,
+    )
+
+
+def _sha256_file(path: Path, chunk_size: int = 1 << 20) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as fh:
+        while chunk := fh.read(chunk_size):
+            h.update(chunk)
+    return h.hexdigest()
+
+
 def read(manifest: SnapshotManifest | dict) -> bytes:
     """读回快照内容并校验完整性（不一致即抛 SnapshotCorrupt）。"""
     path = Path(
