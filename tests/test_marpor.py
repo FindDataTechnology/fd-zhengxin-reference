@@ -18,10 +18,10 @@ from fd_zhengxin_reference.errors import NOT_INGESTED
 from fd_zhengxin_reference.license import license_confirmed, require_license
 
 MPDS_CSV = """country,countryname,party,partyname,edate,date,rile,version
-USA,United States,62220,Democratic Party,20201103,2020,-10.5,2026a
-USA,United States,62230,Republican Party,20201103,2020,20.3,2026a
-DEU,Germany,41920,SPD,20170924,2017,-27.0,2026a
-DEU,Germany,41930,CDU,20170924,2017,10.0,2026a
+USA,United States,62220,Democratic Party,202011,202011,-10.5,2026a
+USA,United States,62230,Republican Party,202011,202011,20.3,2026a
+DEU,Germany,41920,SPD,201709,201709,-27.0,2026a
+DEU,Germany,41930,CDU,201709,201709,10.0,2026a
 """
 
 

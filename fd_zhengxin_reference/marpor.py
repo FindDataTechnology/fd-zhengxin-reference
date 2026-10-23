@@ -83,9 +83,13 @@ def parse_mpds_rows(content: bytes) -> Iterator[dict]:
         raise MpdsFormatError(f"缺 MPDS 必备列 {missing}（header={header[:8]}…）")
     for rec in reader:
         country = (rec.get("country") or "").strip()
+        # MPDS date 是 YYYYMM（选举月，如 202011=2020-11）；旧版纯年份（≤4 位）兼容
         try:
-            year = int(float((rec.get("date") or "").strip()))
+            dv = int(float((rec.get("date") or "").strip()))
         except ValueError:
+            continue
+        year = dv // 100 if dv > 9999 else dv
+        if not 1700 <= year <= 2100:
             continue
         raw_rile = (rec.get("rile") or "").strip()
         if not country or not raw_rile:
