@@ -1,22 +1,25 @@
-"""MARPOR（Manifesto Project）摄取器——关门形态。
+"""MARPOR（Manifesto Project）摄取器——开门形态。
 
-许可门第一（docs/data-license.md §2 / LICENSE_REGISTRY["marpor"] status=pending）：
-Terms of Use 明文 "Redistribution … is forbidden except when … authorized in
-writing"，且三点待人工确认（主数据集下载是否强制注册 / 产品语境是否满足
-scientific research / 查询导出面是否构成 Redistribution）→ license_unconfirmed。
+许可门第一（docs/data-license.md §2 / LICENSE_REGISTRY["marpor"] status=confirmed，
+2026-10-23 产品方裁决先行开门）：Terms of Use 明文 "Redistribution … is forbidden
+except when … authorized in writing"，裁决口径：内部存储与查询展示按「非再分发」
+处理，不开放任何原始数据导出/下载面；正式书面授权
+（manifesto-communication@wzb.eu）后补档。
 
-关门纪律（本模块的契约）：
-- ingest_marpor 首查许可门 → 拒摄取，返回带 reason 的结构化结果；**不读文件、
-  不写库、不走解析**（喂一个不存在的路径也只得到门拒绝，证明门在 IO 之前）。
-- query_marpor_timeseries 同拒：查询口径 reason=not_ingested（errors.py taxonomy），
-  另附台账口径 gate_status=license_unconfirmed（两层口径不混用，见 errors.py）。
-- 真摄取逻辑已就位但被门封住（_parse_mpds_rows / _mpds_country_year_means /
-  _ingest_marpor_open）：三点确认落定、registry 翻为 confirmed 之前不可达。
+许可门纪律（本模块的契约，开门后不变）：
+- ingest_marpor 首查许可门 → require_license 放行（registry 已 confirmed）；
+  门若再收紧回 pending 则仍拒摄取，返回带 reason 的结构化结果；**不读文件、
+  不写库、不走解析**（门在 IO 之前的纪律不因开门废止）。
+- query_marpor_timeseries：查询口径 reason=not_ingested（errors.py taxonomy）
+  仅用于「门开但数据未摄取」的空结果；台账口径 gate_status=license_unconfirmed
+  只在门真关时出现（两层口径不混用，见 errors.py）。
+- 真摄取逻辑已开门可达（_parse_mpds_rows / _mpds_country_year_means /
+  _ingest_marpor_open）：按非再分发约束摄取，聚合口径在台账 detail 注明。
 
 数据形状（MPDS CSV：party × 年 × rile 维度表）：country / countryname / party /
 partyname / edate（选举日）/ date（选举年）/ rile（左右立场综合分）等。
 regime_indicators 是国家-年表，party 细粒度入表需后续波次扩 party_indicators 表；
-门开前的骨架按国家-年对 rile 取均值（聚合口径在台账 detail 注明，不冒充 party 级）。
+骨架按国家-年对 rile 取均值（聚合口径在台账 detail 注明，不冒充 party 级）。
 """
 
 from __future__ import annotations
@@ -134,9 +137,11 @@ def ingest_marpor(
 ) -> dict:
     """MARPOR 摄取入口：许可门第一，门不开即拒（结构化结果，零副作用）。
 
-    关门形态：LICENSE_REGISTRY["marpor"] status=pending → 返回 not_ingested +
-    license_unconfirmed（台账口径）+ 三点确认清单；不读文件、不写库。
-    门开后的真摄取走 _ingest_marpor_open（当前不可达：registry 翻转需人工评审）。
+    开门形态（现状）：LICENSE_REGISTRY["marpor"] status=confirmed（2026-10-23
+    产品方裁决）→ require_license 放行，真摄取走 _ingest_marpor_open
+    （按非再分发约束：不开放原始数据导出/下载面）。
+    门若再收紧回 pending：仍拒摄取，返回 not_ingested + license_unconfirmed
+    （台账口径）+ 确认清单；不读文件、不写库。
     """
     try:
         require_license(SOURCE)
