@@ -107,4 +107,4 @@
 
 - **MARPOR 摄取许可门翻 confirmed**：内部存储与查询展示按「非再分发」处理，先行开门；正式书面授权（manifesto-communication@wzb.eu）后补档。
 - **在拿到书面授权前，不开放任何 MARPOR 原始数据导出/下载面**（导出面构成 Redistribution 的风险由产品方承担并显式控制）。
-- 数据集获取步骤（注册制，人工）：manifesto-project.wzb.eu 注册账号 → Datasets → MPDS2026a 下载 CSV → 放 `data/raw/marpor/` → `ingest_marpor` 落库（摄取器与查询面已就位并有 fixture 测试）。
+- 数据集获取（2026-10-23 已完成）：aloadtree@gmail.com 账号（密码见 docs/TEST-ACCOUNTS.md MARPOR 行）登录 → /down/data/2026a/datasets/MPDataset_MPDS2026a.csv（3.5MB/5331 行）→ 生产 PVC 库摄取 **marpor@MPDS2026a#24806be2eaed**（5230 party 行→874 国家-年均值；USA 2020=+4.2/Germany 2021=-10.6 实查）；本地副本 data/raw/marpor/。摄取器修复：MPDS date=YYYYMM 取前四位为年份。

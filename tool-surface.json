@@ -4,14 +4,62 @@
   "entry_path": "/fd-zhengxin-reference",
   "product_line": "lex",
   "hosting": ["shared-instance"],
-  "description": "政心（lex 第四模块）参照系 MCP：政治概念（SEP 引用层 + 中国线）、思潮坐标（MARPOR + 中国线）、思想关系边（Wikidata + 中国线）、政体指标时序（V-Dem + MARPOR）。对接组装外部真源（不自建抽取），逐结果溯源（带 snapshot_version），许可门纪律（未过门即不摄取、缺口可见），可私有化部署。",
-  "tools": [
-    {"name": "concept_lookup", "tracking_task": "TBD（骨架占位）"},
-    {"name": "ideology_query", "tracking_task": "TBD（骨架占位）"},
-    {"name": "relation_query", "tracking_task": "TBD（骨架占位）"},
-    {"name": "regime_timeseries", "tracking_task": "TBD（骨架占位）"},
-    {"name": "source_status", "tracking_task": "TBD（骨架已接线，台账随源状态）"}
+  "description": "政心（lex 第四模块）参照系 MCP：政治概念（SEP 引用层 + 中国线）、思潮坐标（Wikidata P1142/P1387 + MARPOR 立场编码）、思想关系边（Wikidata + 中国线）、政体指标时序（V-Dem v2x_* 聚合指数）。对接组装外部真源（不自建抽取），逐结果溯源（source/stable_id/as_of/snapshot_version），许可门纪律（未过门即 not_ingested、缺口可见），全只读。",
+  "naming_convention": {
+    "order": "verb_noun",
+    "applies_to": "new_tools",
+    "note": "新工具一律 `动词_名词`。既有名词序工具不改名——改名会破坏已发布 pack 的引用；它们在本清单登记为 historical，改名的唯一正当路径是兼容期机制。",
+    "historical": [
+      "concept_lookup",
+      "ideology_query",
+      "relation_query",
+      "regime_timeseries",
+      "source_status"
+    ],
+    "prefix_policy": "跨服务同名工具不得靠前缀区分（前缀是服务标识而非工具语义）；同名消解靠描述里写明部署与数据源差异。"
+  },
+  "tool_groups": [
+    {
+      "group": "timeseries",
+      "level": "commercial",
+      "tools": ["regime_timeseries"],
+      "data_sources": [
+        "V-Dem v16（CC BY-SA 4.0；snapshot v-dem@v16#9be120ba；4,017,210 行/202 国，生产 PVC 库）"
+      ],
+      "notes": "政心监测舰队核心读面：国家×年 v2x_* 聚合指数（选举民主/问责/公民自由/腐败/言论/参与/审议等域），附 indicator_notes 口径与 provenance；years 显式列表、空结果必带 reason。"
+    },
+    {
+      "group": "ideology",
+      "level": "commercial",
+      "tools": ["ideology_query", "relation_query", "concept_lookup"],
+      "data_sources": [
+        "Wikidata CC0（政治实体坐标锚与关系边）",
+        "MARPOR MPDS2026a（政党宣言立场编码；许可门 2026-10-23 开门，snapshot marpor@MPDS2026a）",
+        "SEP（只链不抄，正文不落库）",
+        "中国线种子 + 近现代五思潮索引（仓内 curated 层）"
+      ],
+      "notes": "思潮坐标（ideology_query 含 marpor 分项）/关系边/概念三查询；多源融合逐源标注状态。"
+    },
+    {
+      "group": "status",
+      "level": "commercial",
+      "tools": ["source_status"],
+      "data_sources": ["六源摄取台账（v-dem/marpor/wikidata/sep/china-seed/modern-index）"],
+      "notes": "巡检读面前置探针：先看六源快照状态再分域巡检；快照带 snapshot_id/sha256/fetched_at。"
+    }
   ],
   "skills_eligible_for_packs": [],
-  "notes": "骨架期占位工具：空结果必带 reason（blocked/upstream/unreachable/not_ingested），不编造数据。五源（V-Dem/MARPOR/Wikidata/SEP/中国线）经许可门（license.py，证据 docs/data-license.md 2026-10-23 核验）：marpor/china-line 评审中 → not_ingested（reason=license_unconfirmed，带 gate_detail）；v-dem 已确认 CC BY-SA 4.0（ShareAlike 只在导出面触发，摄取限定 Core/Country-Date 变体）；wikidata/sep 已确认（CC0 / 只链不抄）。摄取与接线在后续波次。"
+  "surface_export": {
+    "commercial_tools": [
+      "concept_lookup",
+      "ideology_query",
+      "regime_timeseries",
+      "relation_query",
+      "source_status"
+    ],
+    "internal_tools": [],
+    "verified_at": "2026-10-25",
+    "verified_by": "add-lex-line-fleets 1.2 上牌勘验（生产 /mcp tools/list 实测 5/5；source_status 双快照 ok）"
+  },
+  "notes": "原骨架期占位清单（tools+tracking_task）升级为分组口径（add-lex-line-fleets 1.2）。纪律：空结果必带 reason（blocked/upstream/unreachable/not_ingested），不编造数据；许可门证据 docs/data-license.md（2026-10-23 核验：v-dem CC BY-SA 4.0、marpor 开门、wikidata CC0、sep 只链不抄）。"
 }
