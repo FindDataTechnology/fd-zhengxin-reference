@@ -74,17 +74,21 @@ def create_server(settings: Settings | None = None) -> FastMCP:
     return mcp
 
 
-def build_http_app(settings: Settings | None = None):
+def build_http_app(settings: Settings | None = None, middleware=None):
     """完整 HTTP 面：/mcp（MCP streamable-http）+ /healthz + /api/v1/*（只读 REST）。
 
     cli.serve 与测试共用本拼装（route 追加顺序不影响：三个面路径互不相交）。
+
+    ``middleware`` 由调用方决定（change converge-line-identity-and-keys 8.6：配了
+    ``MCP_BEARER_TOKEN`` 才传共享 bearer 门进来）。默认 ``None`` = 与接入前逐字节
+    一致。门对 /healthz 有精确豁免，探针不受影响。
     """
     from starlette.requests import Request
     from starlette.responses import JSONResponse
     from starlette.routing import Route
 
     settings = settings or Settings.from_env()
-    app = create_server(settings).http_app(path="/mcp")
+    app = create_server(settings).http_app(path="/mcp", middleware=middleware)
 
     async def healthz(_: Request) -> JSONResponse:
         from . import __version__
