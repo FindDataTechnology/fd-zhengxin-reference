@@ -22,10 +22,10 @@ def cli() -> None:
 @click.option("--port", default=8000, show_default=True)
 def serve(host: str, port: int) -> None:
     """启动 HTTP 服务（/mcp + /healthz + /api/v1/*）。"""
-    from .auth import BearerAuthMiddleware, configured_token
+    from .auth import BearerAuthMiddleware, gate_enabled
 
     middleware = None
-    if configured_token():
+    if gate_enabled():
         # 配了 token 才挂共享 bearer 门（change converge-line-identity-and-keys 8.6）；
         # 未配 = 与接入前逐字节一致（不挂任何中间件）。门对 /healthz 精确豁免。
         from starlette.middleware import Middleware
