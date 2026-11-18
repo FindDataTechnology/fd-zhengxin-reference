@@ -1,5 +1,7 @@
 # fd-zhengxin-reference
 
+> **Part of the [Lex line (寻数·识律)](https://www.finddatatech.cloud/products/lex) of [FindData](https://www.finddatatech.cloud)** — Zhengxin reference — probe samples for the zhengxin benchmark corpus.
+
 政心（zhengxin 线，lex 第四模块）参照系 MCP：为「政心」政治思想理解工具提供外部
 真源的**对接组装与查询**（不自建抽取）——政治概念（SEP 引用层 + 中国线词条）、
 思潮坐标（MARPOR 立场编码 + 中国线）、思想关系边（Wikidata 对齐 + 中国线）、
