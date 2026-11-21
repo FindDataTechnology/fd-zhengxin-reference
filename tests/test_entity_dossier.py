@@ -198,3 +198,42 @@ def test_wikidata_available_when_entity_in_snapshot(tmp_path) -> None:
     assert out["relation_count"] == 1
     edge = (out["relations"]["out"] or out["relations"]["in"])[0]
     assert edge["pid"] == "P102"
+
+
+# ---------------------------------------------------------------- 简繁兜底
+
+def test_simplify_name_chars() -> None:
+    from fd_zhengxin_reference.entity_dossier import _simplify
+    assert _simplify("鄧小平") == "邓小平"
+    assert _simplify("中國共產黨") == "中国共产党"
+    assert _simplify("習近平") == "习近平"
+    assert _simplify("习近平") == "习近平"      # 简体原样
+    assert _simplify("Xi Jinping") == "Xi Jinping"
+
+
+def test_simplified_query_resolves_traditional_label(tmp_path) -> None:
+    """库里是繁体（鄧小平），用户查简体（邓小平）也要命中。"""
+    settings = Settings.from_env()
+    snap = "wikidata-politics@test#zh"
+    conn = settings.connect()
+    try:
+        wpx.ensure_tables(conn)
+        conn.execute(
+            "INSERT INTO snapshots (snapshot_id, dataset, version, fetched_at,"
+            " sha256, probe_status, storage_path, created_at) VALUES (?,?,?,?,?,?,?,?)",
+            (snap, "wikidata-politics", "test", "2026-11-22T00:00:00+00:00",
+             "zh", "available", "/tmp/x", "2026-11-22T00:00:00+00:00"),
+        )
+        conn.execute(
+            "INSERT INTO wd_political_entities (qid, kind, label_en, label_zh,"
+            " snapshot_version, ingested_at) VALUES (?,?,?,?,?,?)",
+            ("Q16977", "politician", "Deng Xiaoping", "鄧小平", snap,
+             "2026-11-22T00:00:00+00:00"),
+        )
+        conn.commit()
+    finally:
+        conn.close()
+
+    out = _call("邓小平")
+    assert out["resolution"]["status"] == "found"
+    assert out["identity"]["label"] == "鄧小平"   # 返回库里的原标签，不改写

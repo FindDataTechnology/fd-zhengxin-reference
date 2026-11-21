@@ -36,6 +36,7 @@ SEEDS = ["Q17427", "Q29468", "Q76"]  # 中共 / 美国共和党 / 奥巴马（�
 
 # 探针样本 → 本模块查询标记（变量名同形，fixture 即响应）
 DEFAULT_STUBS = {
+    "seed-self": "seed_self_basic.json",
     "person": "pol1_occupation_birth_death.json",
     "party": "party1_alignment_p1387.json",
     "event": "event3_revolution_subclass_closure.json",
@@ -83,6 +84,7 @@ def reshaped_party_rows(name: str, *sides: str) -> dict:
 
 # 人物桩 = pol1 基线 + pol3 党籍关联人（真实样本合并）；政党桩 = party1 + P5004 域样本双侧
 COMPOSED_STUBS = {
+    "seed-self": "seed_self_basic.json",
     "person": merge_bindings("pol1_occupation_birth_death.json", "pol3_party_membership_tie.json"),
     "party": merge_bindings(
         "party1_alignment_p1387.json",
@@ -315,12 +317,14 @@ def test_offline_ingest_counts_and_snapshot(ingested) -> None:
     c = report["counts"]
     # 真实样本回放的确定行数（pol1+pol3 人物 34；party1+P5004 域样本政党 54；
     # event3 事件 6；move1 运动 15；九属性边去重 115；P1387 20 + P1142 8 锚）
-    assert c["entities"] == 109
-    assert c["by_kind"] == {"politician": 34, "party": 54, "event": 6, "movement": 15}
+    # 2026-11-22 +1：seed-self 查询无条件收录种子本身，Q76（奥巴马）此前只作为
+    # pol3 的 party 变量出现、从未成为实体；现在作为 politician 种子进库。
+    assert c["entities"] == 110
+    assert c["by_kind"] == {"politician": 35, "party": 54, "event": 6, "movement": 15}
     assert c["relations"] == 115
     assert c["by_polarity"] == {"inheritance": 18, "alliance": 36, "opposition": 53, "none": 8}
     assert c["anchors"] == 28
-    assert c["queries_ok"] == 23  # 4 实体 + 1 锚批 + 9 属性 × 2 遍（seed 一跳 + 二跳）
+    assert c["queries_ok"] == 24  # 5 实体（含 seed-self）+ 1 锚批 + 9 属性 × 2 遍
     assert c["queries_failed"] == 0 and report["failures"] == []
     assert report["reason"] is None and report["seeds"] == SEEDS
 
@@ -478,7 +482,10 @@ def test_ingest_upstream_partial(conn, tmp_path) -> None:
     assert report["status"] == "partial" and report["reason"] == errors.UPSTREAM
     assert {f["query"].rsplit(":", 1)[0] for f in report["failures"]} == {"person", "edge:P7047"}
     c = report["counts"]
-    assert c["by_kind"]["politician"] == 0 and c["by_kind"]["party"] == 54
+    # person 查询失败 → 邻居政治家 0；但 seed-self 仍无条件收录 Q76（其 occupation
+    # 是 Q82955，故计 politician）。种子不因邻居查询失败而消失——这是有意的：
+    # 「点了名的实体必须入库」与「邻居召回可以失败」是两件事。
+    assert c["by_kind"]["politician"] == 1 and c["by_kind"]["party"] == 54
     assert c["relations"] == 95  # 115 - 20 条 P7047
     log = conn.execute(
         "SELECT status FROM ingest_log WHERE source='wikidata' ORDER BY as_of DESC LIMIT 1"
@@ -497,7 +504,7 @@ def test_reingest_full_refresh(conn, tmp_path) -> None:
         snapshot_root=tmp_path,
     )
     assert second["status"] == "partial"
-    assert second["counts"]["by_kind"] == {"politician": 34, "party": 0, "event": 0, "movement": 0}
+    assert second["counts"]["by_kind"] == {"politician": 35, "party": 0, "event": 0, "movement": 0}
     # 旧快照的政党行已清出；当前快照只剩人物
     assert wpx.query_entity(conn, "Q2914027")["reason"] == errors.NOT_INGESTED
     assert wpx.query_entity(conn, "Q4715")["results"][0]["provenance"]["snapshot_version"] \
@@ -566,3 +573,49 @@ def test_live_smoke_small_sparql_query() -> None:
     assert rows, "live 查询空结果"
     qids = {r["person"]["value"].rsplit("/", 1)[-1] for r in rows}
     assert "Q76" in qids  # seed 自身命中 occupation 判据分支
+
+
+# ---- 种子必须入库（2026-11-22 实测缺陷回归） ----
+
+
+def test_seeds_always_ingested_even_when_neighbourhood_overflows(conn, tmp_path) -> None:
+    """种子实体必须无条件入库，不受邻居召回的 LIMIT 挤压。
+
+    实测缺陷：P102（党员归属）这类无界关系能塞满 `LIMIT N`，把种子自己挤出
+    结果集——按 QID 摄取习近平，库里没有习近平，全是他的邻居。
+    修法：seed-self 单独一次查询、不带 LIMIT、不要求类签名。
+    """
+    report = wpx.ingest_wikidata_politics(
+        SEEDS, conn=conn, client=StubClient(), snapshot_root=tmp_path,
+    )
+    stored = {
+        r[0]
+        for r in conn.execute("SELECT qid FROM wd_political_entities").fetchall()
+    }
+    for seed in SEEDS:
+        assert seed in stored, f"种子 {seed} 未入库（被邻居挤出去了）"
+
+
+def test_seed_kind_not_overridden_by_neighbour_classification(conn, tmp_path) -> None:
+    """种子 kind 由自身 occupation 判定，不被邻居查询的类签名冲掉。
+
+    实测缺陷：习近平在 party 查询里作为「党员关系的一端」被拉进来，被判成
+    party；现在 seed-self 按 P106=Q82955 直接判 politician，且 kind 合并按
+    优先级取高而非「谁后跑谁赢」。
+    """
+    wpx.ingest_wikidata_politics(
+        SEEDS, conn=conn, client=StubClient(), snapshot_root=tmp_path,
+    )
+    row = conn.execute(
+        "SELECT kind FROM wd_political_entities WHERE qid='Q76'"
+    ).fetchone()
+    assert row is not None and row[0] == "politician"
+
+
+def test_seed_self_query_has_no_limit_and_no_signature() -> None:
+    """查询结构守卫：seed-self 不得带 LIMIT、不得要求类签名。"""
+    q = wpx.build_seed_self_query(["Q15031", "Q16977"])
+    assert "LIMIT" not in q
+    assert "wdt:P106 wd:Q82955" not in q      # 签名只筛邻居，不筛种子
+    assert "wd:Q15031" in q and "wd:Q16977" in q
+    assert "# fdzx:seed-self" in q

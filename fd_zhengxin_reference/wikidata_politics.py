@@ -229,10 +229,16 @@ def _values(qids: list[str], var: str) -> str:
     return f"VALUES ?{var} {{ {' '.join('wd:' + q for q in qids)} }}"
 
 
-def _seed_hop_clause(item: str, seeds: list[str], signature: str) -> str:
+def _seed_hop_clause(item: str, seeds: list[str], signature: str, *, seeds_first: bool = True) -> str:
     """实体邻域：item 满足类签名，且与任一 seed 隔着一条受跟踪属性（双向），
     或 item 本身是满足签名的 seed。签名用具体闭包路径（wdt:P31/wdt:P279* wd:Qx），
-    不绑 ?klass 再 FILTER——那会先物化整棵 P279 祖先树。"""
+    不绑 ?klass 再 FILTER——那会先物化整棵 P279 祖先树。
+
+    `seeds_first`：种子的**邻居**召回必须让位给种子本身。
+    实测（2026-11-22）：P102（党员归属）是无界召回，一批种子能拉进 200+ 个
+    无关人物，`LIMIT 200` 一截就把种子自己挤出结果集——库里全是邻居、种子缺席。
+    拆分查法见 `build_person_query` 的种子分句。
+    """
     ties = " ".join("wdt:" + p for p in HOP_PIDS)
     return (
         f"{{ {signature} . {_values(seeds, 'seed')} . VALUES ?tie {{ {ties} }} .\n"
@@ -241,16 +247,62 @@ def _seed_hop_clause(item: str, seeds: list[str], signature: str) -> str:
     )
 
 
+def _seed_self_clause(item: str, seeds: list[str]) -> str:
+    """种子本身：**不要求满足类签名**，无条件收录。
+
+    种子是调用方点名的实体，它必须出现在自己的邻域结果里——否则「按 QID 摄取
+    习近平，结果没有习近平」。签名只用于筛**邻居**（`_seed_hop_clause`）。
+    """
+    return f"{{ {_values(seeds, item)} }}"
+
+
+def _zh_label_clause(var: str, alias: str) -> str:
+    """显式中文标签绑定（`?<var>LabelZh`）。
+
+    为什么不用 `wikibase:language "zh,en"` 一把抓：label service 只回填**一个**
+    值到同一个变量，中文优先就意味着 label_en 列里装的其实是中文——语义脏、
+    而且「Xi Jinping」这类英文查询会查不到。两列各归各位才两头都能查。
+    """
+    return (
+        f'OPTIONAL {{ ?{var} rdfs:label ?{alias} . '
+        f'FILTER(lang(?{alias}) IN ("zh", "zh-hans", "zh-cn", "zh-tw", "zh-hk")) }}'
+    )
+
+
+def build_seed_self_query(seed_qids: list[str]) -> str:
+    """种子本身一次取全（**不带 LIMIT、不要求类签名**）。
+
+    为什么必须单独一次：邻域查询的 `LIMIT N` 是 UNION 后统一截断的，
+    P102（党员归属）一类无界关系能塞满结果集，把种子自己挤出去
+    （实测 2026-11-22：按 QID 摄取习近平，结果库里没有习近平）。
+    种子是调用方点名的实体，必须无条件、优先地进来；签名只用来筛邻居。
+    """
+    seeds = normalize_qids(seed_qids)
+    return f"""# fdzx:seed-self
+SELECT DISTINCT ?seed ?seedLabel ?seedLabelZh ?birth ?death ?countryLabel ?inception ?occupation WHERE {{
+  {_values(seeds, "seed")}
+  OPTIONAL {{ ?seed wdt:P569 ?birth. }}
+  OPTIONAL {{ ?seed wdt:P570 ?death. }}
+  OPTIONAL {{ ?seed wdt:P571 ?inception. }}
+  OPTIONAL {{ ?seed wdt:P17 ?country. }}
+  OPTIONAL {{ ?seed wdt:P106 ?occupation. }}
+  {_zh_label_clause("seed", "seedLabelZh")}
+  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en".
+    ?seed rdfs:label ?seedLabel. ?country rdfs:label ?countryLabel. }}
+}}"""
+
+
 def build_person_query(seed_qids: list[str], limit: int = 200) -> str:
     """政治人物：occupation=P106:Q82955 直挂（探针 pol1 姿势；P39 只作任期不入判据）。"""
     seeds = normalize_qids(seed_qids)
     signature = f"?person wdt:P106 wd:{POLITICIAN_OCCUPATION}"
     return f"""# fdzx:person
-SELECT DISTINCT ?person ?personLabel ?birth ?death ?countryLabel WHERE {{
+SELECT DISTINCT ?person ?personLabel ?personLabelZh ?birth ?death ?countryLabel WHERE {{
   {_seed_hop_clause("person", seeds, signature)}
   OPTIONAL {{ ?person wdt:P569 ?birth. }}
   OPTIONAL {{ ?person wdt:P570 ?death. }}
   OPTIONAL {{ ?person wdt:P27 ?country. }}
+  {_zh_label_clause("person", "personLabelZh")}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en".
     ?person rdfs:label ?personLabel. ?country rdfs:label ?countryLabel. }}
 }}
@@ -258,15 +310,22 @@ LIMIT {limit}"""
 
 
 def build_party_query(seed_qids: list[str], limit: int = 200) -> str:
-    """政党：P31∈Q7278 子类闭包 + P1387 政治倾向（探针 party1 姿势）+P571 成立。"""
+    """政党：P31∈Q7278 子类闭包 + P1387 政治倾向（探针 party1 姿势）+P571 成立。
+
+    `?partyLabelZh` 是显式第二标签：Wikibase 的 label service 只按优先级链回填
+    一个值，`zh-hans,zh,en` 在不保证没有英文标签的实体上会退到 en，届时中文名
+    覆盖不到 label_en 列（两列都在 schema 里）。parse_party_rows 早就读
+    `partyLabelZh`，但查询从没 SELECT 过它——label_zh 恒 None 是这个缺口的表现。
+    """
     seeds = normalize_qids(seed_qids)
     signature = f"?party wdt:P31/wdt:P279* wd:{PARTY_CLASS}"
     return f"""# fdzx:party
-SELECT DISTINCT ?party ?partyLabel ?alignLabel ?inception ?countryLabel WHERE {{
+SELECT DISTINCT ?party ?partyLabel ?partyLabelZh ?alignLabel ?inception ?countryLabel WHERE {{
   {_seed_hop_clause("party", seeds, signature)}
   OPTIONAL {{ ?party wdt:P1387 ?align. }}
   OPTIONAL {{ ?party wdt:P571 ?inception. }}
   OPTIONAL {{ ?party wdt:P17 ?country. }}
+  {_zh_label_clause("party", "partyLabelZh")}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en".
     ?party rdfs:label ?partyLabel. ?align rdfs:label ?alignLabel. ?country rdfs:label ?countryLabel. }}
 }}
@@ -282,6 +341,7 @@ SELECT DISTINCT ?event ?eventLabel ?classLabel ?when ?countryLabel WHERE {{
   {_seed_hop_clause("event", seeds, signature)}
   OPTIONAL {{ ?event wdt:P585 ?when. }}
   OPTIONAL {{ ?event wdt:P17 ?country. }}
+  {_zh_label_clause("event", "eventLabelZh")}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en".
     ?event rdfs:label ?eventLabel. ?class rdfs:label ?classLabel. ?country rdfs:label ?countryLabel. }}
 }}
@@ -297,6 +357,7 @@ SELECT DISTINCT ?m ?mLabel ?inception ?countryLabel WHERE {{
   {_seed_hop_clause("m", seeds, signature)}
   OPTIONAL {{ ?m wdt:P571 ?inception. }}
   OPTIONAL {{ ?m wdt:P17 ?country. }}
+  {_zh_label_clause("m", "mLabelZh")}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en".
     ?m rdfs:label ?mLabel. ?country rdfs:label ?countryLabel. }}
 }}
@@ -471,6 +532,7 @@ def parse_person_rows(sparql_json: dict) -> list[PoliticalEntity]:
         _merge_entity(
             ent,
             label_en=_clean_label(_val(row, "personLabel")),
+            label_zh=_clean_label(_val(row, "personLabelZh")),
             birth=_val(row, "birth"),
             death=_val(row, "death"),
             country=_clean_label(_val(row, "countryLabel")),
@@ -510,6 +572,7 @@ def parse_event_rows(sparql_json: dict) -> list[PoliticalEntity]:
         _merge_entity(
             ent,
             label_en=_clean_label(_val(row, "eventLabel")),
+            label_zh=_clean_label(_val(row, "eventLabelZh")),
             point_in_time=_val(row, "when"),
             country=_clean_label(_val(row, "countryLabel")),
             class_label=_clean_label(_val(row, "classLabel")),
@@ -527,6 +590,65 @@ def parse_movement_rows(sparql_json: dict) -> list[PoliticalEntity]:
         _merge_entity(
             ent,
             label_en=_clean_label(_val(row, "mLabel")),
+            label_zh=_clean_label(_val(row, "mLabelZh")),
+            inception=_val(row, "inception"),
+            country=_clean_label(_val(row, "countryLabel")),
+        )
+    return list(out.values())
+
+
+# kind 优先级：数值越大越具体。合并时取**更高优先级**，与查询先后无关——
+# 否则「person 查询因 LIMIT 没命中、party 查询把种子当邻居拉进来」会把人判成党。
+# seed=0 是种子兜底占位；person 高于 party 是因为人不会真的是党（反之亦然）。
+_KIND_PRIORITY = {
+    "seed": 0, "movement": 1, "event": 2, "party": 3, "politician": 4,
+}
+_SEED_PLACEHOLDER_KIND = "seed"
+
+
+def _upsert_entity(store: dict, ent) -> None:
+    """实体入库：**已存在则合并，不整条覆盖**。
+
+    实测（2026-11-22）：无条件覆盖会让四类查询互相抢——一个实体既被 match 成
+    政治家又被 match 成运动/政党时，后跑的把 kind 冲掉（习近平被判成 movement）。
+    规则：按 `_KIND_PRIORITY` 取更高优先级，**与查询先后无关**——否则
+    「person 查询因 LIMIT 未命中、party 查询把种子当邻居拉进来」会把人判成党。
+    """
+    cur = store.get(ent.qid)
+    if cur is None:
+        store[ent.qid] = ent
+        return
+    if _KIND_PRIORITY.get(ent.kind, 0) > _KIND_PRIORITY.get(cur.kind, 0):
+        cur.kind = ent.kind
+    for f in ("label_en", "label_zh", "birth", "death", "inception",
+              "point_in_time", "country", "class_label"):
+        v = getattr(ent, f, None)
+        if v and not getattr(cur, f, None):
+            setattr(cur, f, v)
+
+
+def parse_seed_self_rows(sparql_json: dict) -> list[PoliticalEntity]:
+    """种子本身 → 实体（kind 暂记 "seed"，随后按四类查询的结果覆盖成真实 kind）。
+
+    没被任何类签名命中的种子（如 occupation 不在政治人物集合里的领导人）保留
+    这个占位 kind——它比「种子消失」诚实得多。
+    """
+    out: dict[str, PoliticalEntity] = {}
+    for row in _bindings(sparql_json):
+        qid = _qid_of(row, "seed")
+        if not qid:
+            continue
+        occ = (_val(row, "occupation") or "").rsplit("/", 1)[-1]
+        kind = "politician" if occ == POLITICIAN_OCCUPATION else "seed"
+        ent = out.setdefault(qid, PoliticalEntity(qid=qid, kind=kind))
+        if kind == "politician" and ent.kind != "politician":
+            ent.kind = "politician"
+        _merge_entity(
+            ent,
+            label_en=_clean_label(_val(row, "seedLabel")),
+            label_zh=_clean_label(_val(row, "seedLabelZh")),
+            birth=_val(row, "birth"),
+            death=_val(row, "death"),
             inception=_val(row, "inception"),
             country=_clean_label(_val(row, "countryLabel")),
         )
@@ -702,21 +824,27 @@ def ingest_wikidata_politics(
     entities: dict[str, PoliticalEntity] = {}
     anchors: dict[tuple[str, str, str], IdeologyAnchor] = {}
 
+    # 种子本身先落地（无 LIMIT、无签名约束）——否则会被邻居挤出结果集。
+    # 先放进去，四类查询如果再命中就会覆盖 kind 与附带的类字段。
+    if j := run("seed-self", build_seed_self_query(seeds)):
+        for ent in parse_seed_self_rows(j):
+            _upsert_entity(entities, ent)
+
     if j := run("person", build_person_query(seeds, limit)):
         for ent in parse_person_rows(j):
-            entities[ent.qid] = ent
+            _upsert_entity(entities, ent)
     if j := run("party", build_party_query(seeds, limit)):
         party_rows, party_anchors = parse_party_rows(j)
         for ent in party_rows:
-            entities[ent.qid] = ent
+            _upsert_entity(entities, ent)
         for a in party_anchors:
             anchors.setdefault((a.qid, a.anchor_pid, a.anchor_label), a)
     if j := run("event", build_event_query(seeds, limit)):
         for ent in parse_event_rows(j):
-            entities[ent.qid] = ent
+            _upsert_entity(entities, ent)
     if j := run("movement", build_movement_query(seeds, limit)):
         for ent in parse_movement_rows(j):
-            entities[ent.qid] = ent
+            _upsert_entity(entities, ent)
 
     # ---- 坐标锚：P1142/P1387 双通道（政党+运动面）----
     anchor_targets = [q for q, e in entities.items() if e.kind in ("party", "movement")]

@@ -1,0 +1,85 @@
+{
+  "head": {
+    "vars": [
+      "seed",
+      "seedLabel",
+      "seedLabelZh",
+      "birth",
+      "death",
+      "countryLabel",
+      "inception",
+      "occupation"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "seed": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q17427"
+        },
+        "seedLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Chinese Communist Party"
+        },
+        "seedLabelZh": {
+          "xml:lang": "zh",
+          "type": "literal",
+          "value": "中国共产党"
+        },
+        "inception": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1921-07-23T00:00:00Z"
+        }
+      },
+      {
+        "seed": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q29468"
+        },
+        "seedLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Republican Party"
+        },
+        "seedLabelZh": {
+          "xml:lang": "zh",
+          "type": "literal",
+          "value": "共和黨"
+        },
+        "inception": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1854-03-20T00:00:00Z"
+        }
+      },
+      {
+        "seed": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q76"
+        },
+        "seedLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Barack Obama"
+        },
+        "seedLabelZh": {
+          "xml:lang": "zh",
+          "type": "literal",
+          "value": "贝拉克·奥巴马"
+        },
+        "birth": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1961-08-04T00:00:00Z"
+        },
+        "occupation": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q82955"
+        }
+      }
+    ]
+  }
+}
