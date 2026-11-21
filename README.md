@@ -20,6 +20,7 @@ attribution / snapshot_version），同一查询在不同时间的结果差异�
 | `ideology_query` | 思潮/思想家/政党的政治坐标 | Wikidata（P1142/P1387）+ MARPOR | 已接线（MARPOR 门关 → not_ingested + license_unconfirmed） |
 | `relation_query` | 思想关系边：类型/极性/权重 | Wikidata（极性过滤直通）+ 中国线种子边 | 已接线（多源融合） |
 | `regime_timeseries` | 国家×年份政体指标序列 | V-Dem（含指标口径说明） | 已接线（摄取后直通；未摄取 not_ingested） |
+| `entity_dossier` | **单实体读面**：人物/政党/事件/运动/学派 → 身份 + 学派 + 出入关系边全集 + 覆盖三态 | 先秦种子谱系 + Wikidata（CC0） | 已接线（种子 40 人物实测 40/40；wikidata 面当前生产未摄取 → `not_ingested`） |
 | `source_status` | 六源摄取状态与缺口（未摄取必带原因） | 摄取台账表 + 许可门 | 已接线 |
 
 启动初始化：`create_server` 以启动钩子形态幂等加载 curated 层（先秦种子谱系
@@ -73,6 +74,22 @@ unreachable / not_ingested），绝不编造数据。
 `~/.fd-zhengxin/reference.db`），与个人层（政心产品库）物理分库。快照走内容寻址的
 不可变存储（`FDZX_SNAPSHOT_DIR`，默认 `~/.fd-zhengxin/snapshots`）。schema 中西无感：
 概念/思潮/关系/指标均为开放词表，坐标轴集与指标集随源落定。
+
+## 实体覆盖率（先量再信）
+
+`entity_dossier` 的「查得到」与「工具存在」是两件事：`query_relations` 对不在快照
+种子邻域内的 QID 一律 `not_ingested`。探针把三态分别计数（**覆盖率低不是失败**，
+测量失败才是）：
+
+```bash
+python3 scripts/coverage_report.py                      # 种子 40 人物
+python3 scripts/coverage_report.py --qids Q15031 Q16977 # 追加近现代实体
+python3 scripts/coverage_report.py --json               # 机器可读
+```
+
+2026-11-21 生产实测：种子 40/40 可用；**Wikidata 政治面 0 行**（无快照），且参照系
+pod 到 `query.wikidata.org` 不可达——Wikidata 摄取只能在集群外跑完再同步
+`reference.db`。详见 `openspec/changes/zhengxin-entity-and-impact-loops/reports/`。
 
 ## 本地开发
 

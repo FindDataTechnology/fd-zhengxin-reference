@@ -41,6 +41,17 @@
       "notes": "思潮坐标（ideology_query 含 marpor 分项）/关系边/概念三查询；多源融合逐源标注状态。"
     },
     {
+      "group": "entity",
+      "level": "commercial",
+      "tools": ["entity_dossier"],
+      "data_sources": [
+        "中国线种子谱系（先秦 8 派/40 人物/83 边，curated 层）",
+        "近现代五思潮索引（仓内 curated 层）",
+        "Wikidata CC0（政治人物/政党/事件/运动；生产快照当前为 0，返回 not_ingested）"
+      ],
+      "notes": "单实体读面：给定 QID / curated id / 标签 → 身份 + 学派 + 出入关系边全集 + 覆盖三态（available / not_in_snapshot / not_ingested，进响应第一层）。与 relation_query 的区别是后者为两两配对查询，本工具答「这个人的全部关系」。实测 2026-11-21：种子 40 人物 40/40 可用，孔子 11 条出入边。"
+    },
+    {
       "group": "status",
       "level": "commercial",
       "tools": ["source_status"],
@@ -55,11 +66,12 @@
       "ideology_query",
       "regime_timeseries",
       "relation_query",
+      "entity_dossier",
       "source_status"
     ],
     "internal_tools": [],
-    "verified_at": "2026-10-25",
-    "verified_by": "add-lex-line-fleets 1.2 上牌勘验（生产 /mcp tools/list 实测 5/5；source_status 双快照 ok）"
+    "verified_at": "2026-11-21",
+    "verified_by": "change zhengxin-entity-and-impact-loops 1.4：entity_dossier 登记（离线 wiring 测试 test_entity_dossier.py 8/8 绿；生产 /mcp 实测待下次出片）"
   },
   "notes": "原骨架期占位清单（tools+tracking_task）升级为分组口径（add-lex-line-fleets 1.2）。纪律：空结果必带 reason（blocked/upstream/unreachable/not_ingested），不编造数据；许可门证据 docs/data-license.md（2026-10-23 核验：v-dem CC BY-SA 4.0、marpor 开门、wikidata CC0、sep 只链不抄）。"
 }

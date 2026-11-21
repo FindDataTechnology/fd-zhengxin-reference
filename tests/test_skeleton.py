@@ -14,6 +14,7 @@ TOOL_SURFACE = {
     "ideology_query",
     "relation_query",
     "regime_timeseries",
+    "entity_dossier",
     "source_status",
 }
 

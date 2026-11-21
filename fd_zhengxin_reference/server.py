@@ -74,6 +74,9 @@ def create_server(settings: Settings | None = None) -> FastMCP:
 
     wellknown.register(mcp)  # /.well-known/line-manifest.json（公开、免鉴权、零网络）
     tools_placeholder.register(mcp, settings)
+    from . import entity_dossier
+
+    entity_dossier.register(mcp, settings)
     tools_registry.register(mcp, settings)
     return mcp
 
