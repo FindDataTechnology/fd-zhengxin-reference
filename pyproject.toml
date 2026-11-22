@@ -7,14 +7,14 @@ name = "fd-zhengxin-reference"
 version = "0.1.0"
 description = "政心（lex 第四模块）参照系 MCP：政治概念/思潮坐标/关系/政体时序四类查询的外部真源（V-Dem/MARPOR/Wikidata/SEP/中国线）对接组装，逐结果溯源，许可门纪律，可私有化部署。"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 license = "MIT"
 authors = [{ name = "FindDataTechnology" }]
 dependencies = [
     # 门 K 线票校验（`line_token.py`）：只有词元轨开启时才走到，但必须声明——
     # 否则镜像缺包，线上表现为 `not_configured`（门静默不挂），而本机测试照绿。
     "pyjwt[crypto]>=2.8",
-    "fastmcp>=3.4,<4",
+    "fastmcp>=4.2.4,<5",
     "click",
     "uvicorn",
 ]
